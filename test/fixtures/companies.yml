@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Company zeh
+  cnpj: 09.358.108/0002-06
+  phone: MyString
+  website: MyString
+  email: email@email.com
+
+two:
+  name: MyString
+  cnpj: MyString
+  phone: MyString
+  website: MyString
+  email: MyString
