@@ -60,3 +60,13 @@ Em seguida, execute os testes:
 ```
 rake test
 ```
+
+## Executando aplicação
+
+Para rodar a aplicação, execute:
+
+```
+rails server
+```
+
+E acesse seu navegador em http://localhost:3000
