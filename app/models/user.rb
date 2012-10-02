@@ -8,7 +8,27 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :login, :email, :password, :password_confirmation, :remember_me
   attr_accessor :login
+
+  # Associations
+  belongs_to :role
   
+  def root?
+    role.name == "root"
+  end
+
+  def client?
+    role.name == "client"
+  end
+
+  def admin?
+    role.name == "admin"
+  end
+
+  def employee?
+    role.name == "employee"
+  end
+
+  # Find by login
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
