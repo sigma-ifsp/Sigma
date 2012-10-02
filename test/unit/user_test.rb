@@ -13,4 +13,26 @@ class UserTest < ActiveSupport::TestCase
   test "find using email" do
     assert_equal @user2, User.find_first_by_auth_conditions({:email => @user2.email})
   end
+
+  test "user shoulb be root" do
+    @user.role = roles(:root)
+    assert @user.root?
+    assert !@user.client?
+  end
+
+  test "user should be client" do
+    @user.role = roles(:client)
+    assert @user.client?
+  end
+
+  test "user should be admin" do
+    @user.role = roles(:admin)
+    assert @user.admin?
+  end
+
+  test "user should be employee" do
+    @user.role = roles(:employee)
+    assert @user.employee?
+  end
+
 end

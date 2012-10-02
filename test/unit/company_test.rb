@@ -7,7 +7,7 @@ class CompanyTest < ActiveSupport::TestCase
   should validate_format_of(:email).with('email@email.com')
   should validate_format_of(:email).not_with('email.email.com')
 
-  test "validation of cnpj" do
+  test "should validate cnpj" do
     company = Company.new(:email => "email@email.com", 
                           :name => "Test")
     assert !company.valid?

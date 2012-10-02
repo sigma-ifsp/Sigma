@@ -29,15 +29,12 @@ gem 'brazilian-rails'
 
 group :development do
   gem 'rails-erd'
-end
-
-group :tools do
   gem 'guard-test'
-  gem 'rb-inotify', '~> 0.8.8'
 end
 
 group :test do
   gem 'shoulda'
+  gem 'ruby-prof'
   # test coverage
   gem 'simplecov', :require => false
 end
