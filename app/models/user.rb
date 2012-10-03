@@ -12,20 +12,24 @@ class User < ActiveRecord::Base
   # Associations
   belongs_to :role
   
+  # Returns if user is root
   def root?
-    role.name == "root"
+    role_is? "root"
   end
 
+  # Returns if user is client
   def client?
-    role.name == "client"
+    role_is? "client"
   end
 
+  # Return if user is a company admin
   def admin?
-    role.name == "admin"
+    role_is? "admin"
   end
 
+  # Returns if user is a company employee
   def employee?
-    role.name == "employee"
+    role_is? "employee"
   end
 
   # Find by login
@@ -36,5 +40,11 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+
+  private
+
+  def role_is? name
+    role && role.name == name
   end
 end
