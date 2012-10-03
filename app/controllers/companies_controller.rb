@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
+   load_and_authorize_resource
   def index
     @companies = Company.all
 
