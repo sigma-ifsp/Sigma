@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag @promotion.image.url %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @promotion.name %>
+</p>
+
+<p>
+  <b>Initial date:</b>
+  <%= @promotion.initial_date %>
+</p>
+
+<p>
+  <b>Ending date:</b>
+  <%= @promotion.ending_date %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @promotion.points %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @promotion.value %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @promotion.company %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @promotion.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>

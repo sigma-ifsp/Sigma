@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  initial_date: 2012-10-03
+  ending_date: 2012-10-03
+  points: 1
+  value: 9.99
+  company: 
+  user: 
+
+two:
+  name: MyString
+  initial_date: 2012-10-03
+  ending_date: 2012-10-03
+  points: 1
+  value: 9.99
+  company: 
+  user: 

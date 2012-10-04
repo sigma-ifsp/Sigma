@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929192918) do
+ActiveRecord::Schema.define(:version => 20121004012346) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(:version => 20120929192918) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "promotion_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+# Could not dump table "promotions" because of following StandardError
+#   Unknown type 'attachment' for column 'image'
 
   create_table "users", :force => true do |t|
     t.string   "username"
