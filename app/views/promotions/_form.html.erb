@@ -11,11 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
+  <div id="name" class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -27,23 +23,23 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  <div class="field">
+  <div id="initial_date" class="field">
     <%= f.label :initial_date %><br />
     <%= f.date_select :initial_date %>
   </div>
-  <div class="field">
+  <div id="ending_date" class="field">
     <%= f.label :ending_date %><br />
     <%= f.date_select :ending_date %>
   </div>
-  <div id="selecao">
+  <div id="promotion_category" id="selecao">
     <%=f.radio_button( :promotion_category_id, 0, :checked => true ) %>Pontos
 	<%=f.radio_button( :promotion_category_id, 1 ) %>Valor
   </div>
-  <div id="pontos" class="field">
+  <div id="points" class="field">
     <%= f.label :points %><br />
     <%= f.number_field :points %>
   </div>
-  <div id="valor" class="field hidden">
+  <div id="value" class="field hidden">
     <%= f.label :value %><br />
     <%= f.text_field :value %>
   </div>
