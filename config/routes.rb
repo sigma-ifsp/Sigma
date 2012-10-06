@@ -1,4 +1,6 @@
 Sigma::Application.routes.draw do
+  resources :promotions
+
   devise_for :users
 
   resources :companies

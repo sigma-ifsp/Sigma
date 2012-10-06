@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002223911) do
+ActiveRecord::Schema.define(:version => 20121004012346) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(:version => 20121002223911) do
     t.datetime "image_updated_at"
   end
 
-  create_table "roles", :force => true do |t|
+  create_table "promotion_categories", :force => true do |t|
     t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+# Could not dump table "promotions" because of following StandardError
+#   Unknown type 'attachment' for column 'image'
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -48,11 +50,9 @@ ActiveRecord::Schema.define(:version => 20121002223911) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end
