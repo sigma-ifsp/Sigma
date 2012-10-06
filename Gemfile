@@ -34,6 +34,7 @@ end
 
 group :test do
   gem 'shoulda'
+  gem 'mocha'
   gem 'ruby-prof'
   # test coverage
   gem 'simplecov', :require => false

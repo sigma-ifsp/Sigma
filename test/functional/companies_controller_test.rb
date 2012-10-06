@@ -2,6 +2,9 @@ require 'test_helper'
 
 class CompaniesControllerTest < ActionController::TestCase
   setup do
+    @user = User.new
+    @user.stubs(:root?).returns(true)
+    @controller.stubs(:current_user).returns(@user)
     @company = companies(:one)
   end
 

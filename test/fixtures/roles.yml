@@ -1,11 +1,15 @@
 root:
+  id: 1
   name: root
 
 client:
+  id: 2
   name: client
 
 admin:
+  id: 3
   name: admin
 
 employee:
+  id: 4
   name: employee

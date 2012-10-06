@@ -70,3 +70,14 @@ rails server
 ```
 
 E acesse seu navegador em http://localhost:3000
+
+## Gerando documentação
+
+A documentação de código pode ser gerada com o comando:
+
+```
+rake doc:app
+```
+
+Será criado no diretório `doc/` um website estático contendo
+a documentação(gerado com RDoc).
