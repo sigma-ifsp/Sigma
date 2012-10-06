@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :login, :email, :password, :password_confirmation, :remember_me
+  # Represents the login, which can be the e-mail
+  # or username.
+  # By default, username is the CPF of client
   attr_accessor :login
 
   # Associations
