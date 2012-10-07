@@ -30,9 +30,9 @@ class UserTest < ActiveSupport::TestCase
     assert @user.admin?
   end
 
-  test "user should be employee" do
-    @user.role = roles(:employee)
-    assert @user.employee?
+  test "user should be cashier" do
+    @user.role = roles(:cashier)
+    assert @user.cashier?
   end
 
 end

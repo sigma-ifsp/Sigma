@@ -30,9 +30,9 @@ class User < ActiveRecord::Base
     role_is? "admin"
   end
 
-  # Returns if user is a company employee
-  def employee?
-    role_is? "employee"
+  # Returns if user is a company cashier
+  def cashier?
+    role_is? "cashier"
   end
 
   # Find by login

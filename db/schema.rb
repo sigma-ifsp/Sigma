@@ -33,8 +33,35 @@ ActiveRecord::Schema.define(:version => 20121004012346) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "promotions" because of following StandardError
-#   Unknown type 'attachment' for column 'image'
+  create_table "promotions", :force => true do |t|
+    t.string   "name"
+    t.date     "initial_date"
+    t.date     "ending_date"
+    t.integer  "points"
+    t.decimal  "value"
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.integer  "promotion_category_id"
+    t.integer  "points_to_exchange"
+    t.text     "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "promotions", ["company_id"], :name => "index_promotions_on_company_id"
+  add_index "promotions", ["promotion_category_id"], :name => "index_promotions_on_promotion_category_id"
+  add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -50,9 +77,11 @@ ActiveRecord::Schema.define(:version => 20121004012346) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

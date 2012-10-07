@@ -24,8 +24,15 @@
     <td><%= promotion.company %></td>
     <td><%= promotion.user %></td>
     <td><%= link_to 'Show', promotion %></td>
-    <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
-    <td><%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% if can? :update, promotion %>
+      <td>
+        <%= link_to 'Edit', edit_promotion_path(promotion) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

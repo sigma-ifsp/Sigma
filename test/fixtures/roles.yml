@@ -10,6 +10,6 @@ admin:
   id: 3
   name: admin
 
-employee:
+cashier:
   id: 4
-  name: employee
+  name: cashier

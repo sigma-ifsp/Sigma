@@ -8,6 +8,14 @@ class Ability
     if user.root?
       can :manage, :all
     end
+
+    if user.cashier?
+      can :read, Promotion
+    end
+
+    if user.admin?
+      can :manage, Promotion, :user_id => user.id
+    end
     #
     # The first argument to `can` is the action you are giving the user permission to do.
     # If you pass :manage it will apply to every action. Other common actions here are
