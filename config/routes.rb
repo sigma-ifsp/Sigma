@@ -1,9 +1,11 @@
 Sigma::Application.routes.draw do
+  resources :points
+
   resources :promotions
 
   devise_for :users
 
-  resources :companies
+  resources :companies    
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

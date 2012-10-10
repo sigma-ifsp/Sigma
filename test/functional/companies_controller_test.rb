@@ -46,7 +46,11 @@ class CompaniesControllerTest < ActionController::TestCase
     assert_difference('Company.count', -1) do
       delete :destroy, id: @company
     end
-
     assert_redirected_to companies_path
+  end
+
+  test "should get increase_points" do
+    get :increase_points, :id => @company.id
+    assert_response :success
   end
 end

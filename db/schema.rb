@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004012346) do
+ActiveRecord::Schema.define(:version => 20121010000405) do
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "cpf"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "clients", ["cpf"], :name => "index_clients_on_cpf"
+  add_index "clients", ["user_id"], :name => "index_clients_on_user_id"
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -26,6 +37,20 @@ ActiveRecord::Schema.define(:version => 20121004012346) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "points", :force => true do |t|
+    t.integer  "client_id"
+    t.decimal  "value"
+    t.integer  "points"
+    t.integer  "promotion_id"
+    t.integer  "company_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "points", ["client_id"], :name => "index_points_on_client_id"
+  add_index "points", ["company_id"], :name => "index_points_on_company_id"
+  add_index "points", ["promotion_id"], :name => "index_points_on_promotion_id"
 
   create_table "promotion_categories", :force => true do |t|
     t.string   "name"

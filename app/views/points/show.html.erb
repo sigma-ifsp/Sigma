@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @point.client %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @point.value %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @point.points %>
+</p>
+
+<p>
+  <b>Promotion:</b>
+  <%= @point.promotion %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @point.company %>
+</p>
+
+
+<%= link_to 'Edit', edit_point_path(@point) %> |
+<%= link_to 'Back', points_path %>
