@@ -40,7 +40,9 @@ class PointsController < ApplicationController
   # POST /points
   # POST /points.json
   def create
+    @employee = current_user.employee
     @point = Point.new(params[:point])
+    @point.company = @employee.company
 
     respond_to do |format|
       if @point.save

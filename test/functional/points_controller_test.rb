@@ -3,6 +3,11 @@ require 'test_helper'
 class PointsControllerTest < ActionController::TestCase
   setup do
     @point = points(:one)
+    @point.stubs(:cpf => '41244527807')
+    user = User.new
+    user.stubs(:employee).returns(Employee.new(:name => "Philip", :company => Company.new))
+    @controller.stubs(:current_user).returns(user)
+  
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class PointsControllerTest < ActionController::TestCase
 
   test "should create point" do
     assert_difference('Point.count') do
-      post :create, point: { points: @point.points, value: @point.value }
+      post :create, point: { points: @point.points, value: @point.value, cpf: @point.cpf }
     end
 
     assert_redirected_to point_path(assigns(:point))
@@ -35,7 +40,7 @@ class PointsControllerTest < ActionController::TestCase
   end
 
   test "should update point" do
-    put :update, id: @point, point: { points: @point.points, value: @point.value }
+    put :update, id: @point, point: { points: @point.points, value: @point.value, cpf: @point.cpf }
     assert_redirected_to point_path(assigns(:point))
   end
 

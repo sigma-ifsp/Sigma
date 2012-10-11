@@ -1,11 +1,12 @@
 class Point < ActiveRecord::Base
   belongs_to :client
   belongs_to :promotion
+  #encoding: utf-8
   belongs_to :company
   attr_reader :cpf
-  attr_accessible :points, :value, :cpf, :promotion_id, :company_id
-
+  attr_accessible :points, :value, :cpf, :promotion_id, :company_id 
   validate :check_client_cpf
+  
 
   # Find or create a new client based on CPF
   def cpf=(client_cpf)
@@ -17,5 +18,8 @@ class Point < ActiveRecord::Base
 
   # TODO: Validates CPF on this virtual attribute
   def check_client_cpf
+    if @cpf.present? && !Cpf.new(@cpf).valido?
+      errors.add :cpf, "Nao e valido"
+    end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010000405) do
+ActiveRecord::Schema.define(:version => 20121011011802) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(:version => 20121010000405) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "employees", :force => true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "employees", ["company_id"], :name => "index_employees_on_company_id"
+  add_index "employees", ["user_id"], :name => "index_employees_on_user_id"
 
   create_table "points", :force => true do |t|
     t.integer  "client_id"

@@ -21,7 +21,7 @@ class PromotionsControllerTest < ActionController::TestCase
 
   test "should create promotion" do
     assert_difference('Promotion.count') do
-      post :create, promotion: { ending_date: @promotion.ending_date, initial_date: @promotion.initial_date, name: @promotion.name, points: @promotion.points, value: @promotion.value }
+      post :create, promotion: { description: @promotion.description, ending_date: @promotion.ending_date, initial_date: @promotion.initial_date, name: @promotion.name, points: @promotion.points, value: @promotion.value }
     end
 
     assert_redirected_to promotion_path(assigns(:promotion))

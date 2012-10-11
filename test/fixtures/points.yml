@@ -5,7 +5,8 @@ one:
   value: 9.99
   points: 1
   promotion: 
-  company: 
+  company:
+
 
 two:
   client: 
@@ -13,3 +14,4 @@ two:
   points: 1
   promotion: 
   company: 
+

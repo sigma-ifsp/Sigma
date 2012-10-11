@@ -4,6 +4,7 @@ one:
   name: MyString
   initial_date: 2012-10-03
   ending_date: 2012-10-03
+  description: 'bla bla'
   points: 1
   value: 9.99
   company: 
@@ -16,4 +17,5 @@ two:
   points: 1
   value: 9.99
   company: 
-  user: 
+  user:
+  description: 'bla bla'

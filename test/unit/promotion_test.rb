@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class PromotionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should validate_presence_of(:name)
+  should validate_presence_of(:description)
 end
