@@ -42,6 +42,7 @@ class PointsController < ApplicationController
   def create
     @employee = current_user.employee
     @point = Point.new(params[:point])
+
     @point.company = @employee.company
 
     respond_to do |format|

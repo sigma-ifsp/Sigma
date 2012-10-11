@@ -111,6 +111,8 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
+    qunit-rails (0.0.2)
+      railties (~> 3.2.3)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -190,6 +192,7 @@ DEPENDENCIES
   jquery-rails
   mocha
   paperclip (~> 3.0)
+  qunit-rails
   rails (= 3.2.8)
   rails-erd
   ruby-prof

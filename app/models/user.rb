@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   # Associations
   belongs_to :role
   has_many :users
+  has_one :employee
+
   # Returns if user is root
   def root?
     role_is? "root"

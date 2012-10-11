@@ -32,6 +32,10 @@ group :development do
   gem 'guard-test'
 end
 
+group :development, :test do
+  gem 'qunit-rails'
+end
+
 group :test do
   gem 'shoulda'
   gem 'mocha'

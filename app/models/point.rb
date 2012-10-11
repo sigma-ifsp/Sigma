@@ -19,7 +19,7 @@ class Point < ActiveRecord::Base
   # TODO: Validates CPF on this virtual attribute
   def check_client_cpf
     if @cpf.present? && !Cpf.new(@cpf).valido?
-      errors.add :cpf, "Nao e valido"
+      errors.add :cpf, I18n.t('errors.messages.cpf_is_not_valid')
     end
   end
 end
