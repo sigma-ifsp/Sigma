@@ -2,7 +2,6 @@
   <% if @point.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@point.errors.count, "error") %> prohibited this point from being saved:</h2>
-
       <ul>
       <% @point.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,21 +12,18 @@
 
   <div class="field">
     <%= f.label :cpf %><br />
-    <%= f.text_field :cpf %>
+    <%= f.text_field :cpf, :maxlength => 11 %>
   </div>
   <div class="field">
     <%= f.label :value %><br />
-    <%= f.text_field :value %>
+    <%= f.number_field :value %>
   </div>
   
   <div class="field">
     <%= f.label :promotion_id %><br />
-    <%= f.collection_select(:promotion_id, Promotion.all, :id, :name, :prompt => false) %>
+    <%= f.collection_select(:promotion_id, @company.promotions, :id, :name, :prompt => false) %>
   </div>
-  <div class="field">
-    <%= f.label :company_id %><br />
-    <%= f.text_field :company_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

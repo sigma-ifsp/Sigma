@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Client:</b>
-  <%= @point.client %>
+<b>Client:</b>
+<%= @point.client %>
 </p>
+
+<% if @temp_password %>
+  <p>
+  <b>Temporary password:</b>
+  <%= @temp_password %>
+  </p>
+<% end %>
 
 <p>
   <b>Value:</b>

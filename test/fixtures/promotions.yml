@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: Promotion 1
   initial_date: 2012-10-03
   ending_date: 2012-10-03
   description: 'bla bla'
-  points: 1
+  points: 2
   value: 9.99
   company: 
   user: 

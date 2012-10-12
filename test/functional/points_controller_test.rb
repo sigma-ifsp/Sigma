@@ -2,8 +2,10 @@ require 'test_helper'
 
 class PointsControllerTest < ActionController::TestCase
   setup do
+    @promotion = promotions(:two)
     @point = points(:one)
-    @point.stubs(:cpf => '41244527807')
+    @point.cpf = '41244527807'
+
     user = User.new
     user.stubs(:employee).returns(Employee.new(:name => "Philip", :company => Company.new))
     @controller.stubs(:current_user).returns(user)
@@ -23,13 +25,14 @@ class PointsControllerTest < ActionController::TestCase
 
   test "should create point" do
     assert_difference('Point.count') do
-      post :create, point: { points: @point.points, value: @point.value, cpf: @point.cpf }
+      post :create, point: { value: @point.value, cpf: @point.cpf, promotion_id: @promotion.id }
     end
 
     assert_redirected_to point_path(assigns(:point))
   end
 
   test "should show point" do
+
     get :show, id: @point
     assert_response :success
   end
@@ -40,7 +43,7 @@ class PointsControllerTest < ActionController::TestCase
   end
 
   test "should update point" do
-    put :update, id: @point, point: { points: @point.points, value: @point.value, cpf: @point.cpf }
+    put :update, id: @point, point: { value: @point.value, cpf: @point.cpf, promotion_id: @promotion.id }
     assert_redirected_to point_path(assigns(:point))
   end
 

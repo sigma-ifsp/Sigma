@@ -1,10 +1,11 @@
 class PromotionsController < ApplicationController
   load_and_authorize_resource
+  before_filter :load_company
 
   # GET /promotions
   # GET /promotions.json
   def index
-    @promotions = Promotion.all
+    @promotions = Promotion.by_company(@company)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,6 +44,8 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(params[:promotion])
+    @promotion.company = @company
+    @promotion.user = current_user
 
     respond_to do |format|
       if @promotion.save
@@ -81,5 +84,11 @@ class PromotionsController < ApplicationController
       format.html { redirect_to promotions_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def load_company
+    @company = current_user.employee.company
   end
 end

@@ -8,3 +8,7 @@ deh:
 root:
   email: 'root@email.com'
   username: 'root'
+
+zeh:
+  email: 'zeh@email.com'
+  username: 'zeh'

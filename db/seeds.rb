@@ -13,3 +13,5 @@ Role.create([
             { name: 'admin', description: 'Company admin' },
             { name: 'employee', description: 'Company employee'}
 ])
+
+PromotionCategory.create([{ name: 'points'}, {name: 'value'}])

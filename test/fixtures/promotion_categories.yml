@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+points:
+  name: points
 
-two:
-  name: MyString
+value:
+  name: value

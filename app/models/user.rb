@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :login, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :login, :email, :password, :password_confirmation, :remember_me, :temporary_password
   # Represents the login, which can be the e-mail
   # or username.
   # By default, username is the CPF of client
@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :users
   has_one :employee
+
+  before_save :erase_temporary_password!
 
   # Returns if user is root
   def root?
@@ -51,5 +53,11 @@ class User < ActiveRecord::Base
 
   def role_is? name
     role && role.name == name
+  end
+
+  def erase_temporary_password!
+    if self.sign_in_count > 0
+      self.temporary_password = nil
+    end
   end
 end

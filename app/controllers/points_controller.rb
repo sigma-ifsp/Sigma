@@ -1,4 +1,5 @@
 class PointsController < ApplicationController
+  before_filter :load_company
   # GET /points
   # GET /points.json
   def index
@@ -14,6 +15,8 @@ class PointsController < ApplicationController
   # GET /points/1.json
   def show
     @point = Point.find(params[:id])
+
+    @temp_password = @point.client.try(:user).try(:temporary_password)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,10 +43,9 @@ class PointsController < ApplicationController
   # POST /points
   # POST /points.json
   def create
-    @employee = current_user.employee
     @point = Point.new(params[:point])
 
-    @point.company = @employee.company
+    @point.company = @company
 
     respond_to do |format|
       if @point.save
@@ -82,5 +84,11 @@ class PointsController < ApplicationController
       format.html { redirect_to points_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def load_company
+    @company = current_user.employee.company
   end
 end

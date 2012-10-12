@@ -32,8 +32,8 @@
     <%= f.date_select :ending_date %>
   </div>
   <div id="promotion_category" id="selecao">
-    <%=f.radio_button( :promotion_category_id, 0, :checked => true ) %>Pontos
-	<%=f.radio_button( :promotion_category_id, 1 ) %>Valor
+  <%=f.radio_button( :promotion_category_id, PromotionCategory.by_points.id, :checked => true ) %> Pontos
+	<%=f.radio_button( :promotion_category_id, PromotionCategory.by_value.id ) %>Valor
   </div>
   <div id="points" class="field">
     <%= f.label :points %><br />
