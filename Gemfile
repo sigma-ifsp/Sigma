@@ -30,6 +30,7 @@ gem 'brazilian-rails'
 group :development do
   gem 'rails-erd'
   gem 'guard-test'
+  gem 'pry-rails'
 end
 
 group :development, :test do
