@@ -19,9 +19,25 @@ PromotionCategory.create([{ name: 'points'}, {name: 'value'}])
 company = Company.create(name: 'Mit su yan', cnpj: '11.284.880/0001-91', email: 'mit@email.com')
 
 # Admin user
-admin_user = User.new(username: 'maria', email: 'admin@mitsuyan.com.br', password: '123456', password_confirmation: '123456', role: admin_role)
+admin_user = User.new(username: 'maria', email: 'admin@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
+admin_user.role = admin_role
+admin_user.save
 admin = Employee.create(name: 'Maria', company: company, user: admin_user)
 
 # Cashier
-cashier_user = User.new(username: 'ivete', email: 'cashier@mitsuyan.com.br', password: '123456', password_confirmation: '123456', role: cashier_role)
+cashier_user = User.new(username: 'ivete', email: 'cashier@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
+cashier_user.role = cashier_role
+cashier_user.save
 cashier = Employee.create(name: 'Ivete', company: company, user: cashier_user)
+
+
+# Root - You should change this password
+root_user = User.create(username: 'root', email: 'root@sigma.com.br', password: '123456', password_confirmation: '123456')
+root_user.role = root_role
+root_user.save
+# Clients
+['antonio','joao','claudia','fernanda'].each do |username|
+  u = User.create(username: username, email: "#{username}@sigma.com.br", 
+              password: '123456', password_confirmation: '123456')
+  u.role = client_role
+end
