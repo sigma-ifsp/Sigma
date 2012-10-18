@@ -2,7 +2,7 @@
 
 john:
   name: John
-  cpf: MyString
+  cpf: '727.814.261-05'
   user_id: 1  
 
 two:

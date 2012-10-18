@@ -1,4 +1,9 @@
 Sigma::Application.routes.draw do
+  get "clients/index"
+
+  match 'clients/:id' => 'clients#show'
+  match 'clients/:id/points' => 'clients#points'
+
   resources :points
 
   resources :promotions

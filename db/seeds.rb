@@ -36,8 +36,39 @@ root_user = User.create(username: 'root', email: 'root@sigma.com.br', password: 
 root_user.role = root_role
 root_user.save
 # Clients
-['antonio','joao','claudia','fernanda'].each do |username|
-  u = User.create(username: username, email: "#{username}@sigma.com.br", 
+[['antonio','618.178.511-60'],['joao','738.480.586-42'],
+  ['claudia','028.512.380-78'],['fernanda', '523.912.467-14']].each do |user|
+  u = User.new(username: user[0], email: "#{user[0]}@sigma.com.br", 
               password: '123456', password_confirmation: '123456')
   u.role = client_role
+  u.save
+  client = Client.new(name: user[0], cpf: user[1])
+  client.user = u
+  client.save
+end
+
+
+# Promotions
+1.upto(10) do |x|
+  p = Promotion.new({name: "Promotion #{x}", initial_date: 1.day.ago,
+    ending_date: 1000.days.from_now,
+    value: 10, 
+    description: "Promotion #{x}",
+    points_to_exchange: 100,
+  })
+  p.company = company
+  p.promotion_category = PromotionCategory.last
+  p.save
+end
+
+
+1.upto(5) do |x|
+  client = Client.find_by_name('claudia')
+  p = Point.new
+  p.cpf = client.cpf
+  p.company = company
+  p.promotion = Promotion.first
+  p.value = 5.0
+  p.points = 2
+  p.save
 end

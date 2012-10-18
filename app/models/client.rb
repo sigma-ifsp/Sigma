@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
   belongs_to :user
+  has_many :points
   attr_accessible :cpf, :name
 
   # Validates CPF using Brazilian Rails

@@ -1,0 +1,21 @@
+<h1>Points</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Promoção</th>
+      <th>Validade</th>
+      <th>Pontos acumulados</th>
+      <th>Pontos da promoção</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @points.each do |point| %>
+      <tr>
+        <td><%= point.promotion.name %></td>
+        <td><%= point.promotion.ending_date %></td>
+        <td><%= point.points %></td>
+        <td><%= point.promotion.points_to_exchange %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
