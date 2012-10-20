@@ -7,6 +7,10 @@ class Point < ActiveRecord::Base
   validate :check_client_cpf
   before_save :calculate_points
 
+  scope :by_valid_promotions,
+    lambda {  { :include => :promotion, :conditions => ['promotions.ending_date >= ?', Date.today] } }
+
+  # Represents the client document
   attr_reader :cpf
 
   # Find or create a new client based on CPF

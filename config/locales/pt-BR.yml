@@ -259,4 +259,8 @@ pt-BR:
         subject: 'Instruções para reinicialização de senha'
       unlock_instructions:
         subject: 'Instruções para desbloqueio de conta'
-
+  sigma:
+    points: 'Pontos'
+    points_by_promotion: 'Pontos por promoção'
+    ending_date: 'Data de expiração'
+    initial_date: 'Data inicial'

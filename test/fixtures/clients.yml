@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 john:
+  id: 1
   name: John
   cpf: '727.814.261-05'
-  user_id: 1  
-
-two:
-  name: MyString
-  cpf: MyString
-  user_id: 1
-
-
+  user_id: 5

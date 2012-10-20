@@ -2,12 +2,12 @@ require 'test_helper'
 
 class ClientsControllerTest < ActionController::TestCase
   setup do
-    @client = clients(:john)
-  end
+    @user = users(:john)
+    @user.stubs(:client? => true)
+    @controller.stubs(:current_user => @user)
 
-  test "should get index" do
-    get :index
-    assert_response :success
+    @client = clients(:john)
+    @client.stubs(:user_id => @user.id)
   end
 
   test "should get show" do

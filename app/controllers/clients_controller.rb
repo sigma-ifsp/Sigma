@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+  load_and_authorize_resource
+
   def index
   end
 
@@ -8,6 +10,6 @@ class ClientsController < ApplicationController
   # GET /clients/:id/points
   def points
     @client = Client.find(params[:id])
-    @points = @client.points
+    @points = @client.points.by_valid_promotions
   end
 end

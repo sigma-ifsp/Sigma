@@ -16,7 +16,7 @@ cashier_role = Role.create(name: 'employee', description: 'Company employee')
 PromotionCategory.create([{ name: 'points'}, {name: 'value'}])
 
 # Sample Companies
-company = Company.create(name: 'Mit su yan', cnpj: '11.284.880/0001-91', email: 'mit@email.com')
+company = Company.create(name: 'Mit su yan', cnpj: '11284880000191', email: 'mit@email.com')
 
 # Admin user
 admin_user = User.new(username: 'maria', email: 'admin@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
@@ -36,8 +36,8 @@ root_user = User.create(username: 'root', email: 'root@sigma.com.br', password: 
 root_user.role = root_role
 root_user.save
 # Clients
-[['antonio','618.178.511-60'],['joao','738.480.586-42'],
-  ['claudia','028.512.380-78'],['fernanda', '523.912.467-14']].each do |user|
+[['antonio','61817851160'],['joao','73848058642'],
+  ['claudia','02851238078'],['fernanda', '52391246714']].each do |user|
   u = User.new(username: user[0], email: "#{user[0]}@sigma.com.br", 
               password: '123456', password_confirmation: '123456')
   u.role = client_role
@@ -48,11 +48,12 @@ root_user.save
 end
 
 
-# Promotions
+# Promotions by value
 1.upto(10) do |x|
-  p = Promotion.new({name: "Promotion #{x}", initial_date: 1.day.ago,
+  p = Promotion.new({name: "Promotion #{x} - by value", initial_date: 1.day.ago,
     ending_date: 1000.days.from_now,
     value: 10, 
+    points: 1,
     description: "Promotion #{x}",
     points_to_exchange: 100,
   })
@@ -61,14 +62,26 @@ end
   p.save
 end
 
+# Promotions by points
+1.upto(10) do |x|
+  p = Promotion.new({name: "Promotion #{x} - by point", initial_date: 1.day.ago,
+    ending_date: 1000.days.from_now,
+    points: 1,
+    description: "Promotion #{x}",
+    points_to_exchange: 10,
+  })
+  p.company = company
+  p.promotion_category = PromotionCategory.first
+  p.save
+end
 
-1.upto(5) do |x|
+
+1.upto(15) do |x|
   client = Client.find_by_name('claudia')
   p = Point.new
   p.cpf = client.cpf
   p.company = company
-  p.promotion = Promotion.first
-  p.value = 5.0
-  p.points = 2
+  p.promotion = Promotion.first(:offset => rand(Promotion.count))
+  p.value = 20.0
   p.save
 end

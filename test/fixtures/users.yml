@@ -1,14 +1,23 @@
 phil:
+  id: 1
   username: 'philss'
   email: 'philip@email.com'
 
 deh:
+  id: 2
   email: 'deh@email.com'
 
 root:
+  id: 3
   email: 'root@email.com'
   username: 'root'
 
 zeh:
+  id: 4
   email: 'zeh@email.com'
   username: 'zeh'
+
+john:
+  id: 5
+  email: 'john@email.com'
+  username: 'john'

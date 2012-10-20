@@ -1,21 +1,10 @@
-<h1>Points</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Promoção</th>
-      <th>Validade</th>
-      <th>Pontos acumulados</th>
-      <th>Pontos da promoção</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @points.each do |point| %>
-      <tr>
-        <td><%= point.promotion.name %></td>
-        <td><%= point.promotion.ending_date %></td>
-        <td><%= point.points %></td>
-        <td><%= point.promotion.points_to_exchange %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h2><%= I18n.t('sigma.points_by_promotion') %></h2>
+
+<% @points.group_by(&:promotion).each do |promotion, points| %>
+  <h3><%= promotion.name %></h3>
+
+  <p><%= I18n.l(promotion.ending_date, :format => :long) %></p>
+  <p>
+    <%= points.sum(&:points) %> / <%= promotion.points_to_exchange %>
+  </p>
+<% end %>
