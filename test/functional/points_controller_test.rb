@@ -7,7 +7,7 @@ class PointsControllerTest < ActionController::TestCase
     @point.cpf = '41244527807'
 
     user = User.new
-    user.stubs(:employee).returns(Employee.new(:name => "Philip", :company => Company.new))
+    user.stubs(:employee).returns(Employee.new(:company => Company.new))
     @controller.stubs(:current_user).returns(user)
   
   end

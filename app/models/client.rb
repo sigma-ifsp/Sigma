@@ -11,6 +11,10 @@ class Client < ActiveRecord::Base
     self.name || self.cpf
   end
 
+  def name
+    self.user.try(:name)
+  end
+
   private
 
   def create_user

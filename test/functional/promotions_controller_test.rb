@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PromotionsControllerTest < ActionController::TestCase
   setup do
-    employee = Employee.new(name: 'Employee')
+    employee = Employee.new
     employee.stubs(:company => Company.new(name: 'Company 1'))
     user = User.new
     user.stubs(:role => Role.new(name: "admin"))

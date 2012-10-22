@@ -2,6 +2,5 @@
 
 john:
   id: 1
-  name: John
   cpf: '727.814.261-05'
   user_id: 5
