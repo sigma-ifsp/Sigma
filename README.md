@@ -61,6 +61,11 @@ Em seguida, execute os testes:
 rake test
 ```
 
+## Cobertura de testes
+
+Após rodar os testes com `rake test`, a ferramenta Simplecov irá gerar um relatório
+de cobertura de testes no diretório `coverage/`, na raíz da aplicação.
+
 ## Executando aplicação
 
 Para rodar a aplicação, execute:
@@ -70,6 +75,7 @@ rails server
 ```
 
 E acesse seu navegador em http://localhost:3000
+Por padrão, o Rails escutará a porta 3000.
 
 ## Gerando documentação
 
