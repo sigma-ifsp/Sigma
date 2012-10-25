@@ -11,6 +11,7 @@ class Ability
 
     if user.cashier?
       can :read, Promotion
+      can :balance, Client
     end
 
     if user.admin?
@@ -18,7 +19,7 @@ class Ability
     end
 
     if user.client?
-      can [:manage, :points], Client, :user_id => user.id
+      can [:manage, :points, :balance], Client, :user_id => user.id
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

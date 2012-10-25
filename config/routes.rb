@@ -3,6 +3,7 @@ Sigma::Application.routes.draw do
 
   match 'clients/:id' => 'clients#show'
   match 'clients/:id/points' => 'clients#points'
+  match 'clients/:cpf/promotions/:promotion_id/balance' => 'clients#balance'
 
   resources :points
 

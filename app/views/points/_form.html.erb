@@ -1,4 +1,4 @@
-<%= form_for(@point) do |f| %>
+<%= form_for(@point, :remote => true) do |f| %>
   <% if @point.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@point.errors.count, "error") %> prohibited this point from being saved:</h2>
@@ -11,20 +11,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cpf %><br />
+    <%= f.label :cpf, "CPF" %><br />
     <%= f.text_field :cpf, :maxlength => 11 %>
   </div>
+  
   <div class="field">
-    <%= f.label :value %><br />
+    <%= f.label :promotion_id, "Promoção" %><br />
+    <%= f.collection_select(:promotion_id, @company.promotions, :id, :name, :prompt => false) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value, "Valor" %><br />
     <%= f.number_field :value %>
   </div>
   
   <div class="field">
-    <%= f.label :promotion_id %><br />
-    <%= f.collection_select(:promotion_id, @company.promotions, :id, :name, :prompt => false) %>
+    <%= label_tag :saldo , "Saldo do Cliente"%> <span id="balance"></span>
+    <%= label_tag :client_balance %><br /><span id="client_balance"></span>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  "Atribuir" %> 
+    <%= f.submit  "Atribuir e Trocar" %> 
+    <%= f.submit  "Trocar" %>   
   </div>
 <% end %>
