@@ -2,7 +2,8 @@ class Client < ActiveRecord::Base
   belongs_to :user
   has_many :points
   attr_accessible :cpf, :name
-
+  has_many :exchanges
+  has_many :client_balances
   # Validates CPF using Brazilian Rails
   validates :cpf, :presence => true, :cpf => true, :uniqueness => true
   after_create :create_user
