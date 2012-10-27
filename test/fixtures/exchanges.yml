@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  promotion: 
+  client: 
+  observation: MyString
+
+two:
+  promotion: 
+  client: 
+  observation: MyString
