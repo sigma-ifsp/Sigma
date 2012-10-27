@@ -22,13 +22,13 @@ company = Company.create(name: 'Mit su yan', cnpj: '11284880000191', email: 'mit
 admin_user = User.new(username: 'maria', email: 'admin@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
 admin_user.role = admin_role
 admin_user.save
-admin = Employee.create(name: 'Maria', company: company, user: admin_user)
+admin = Employee.create(company: company, user: admin_user)
 
 # Cashier
 cashier_user = User.new(username: 'ivete', email: 'cashier@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
 cashier_user.role = cashier_role
 cashier_user.save
-cashier = Employee.create(name: 'Ivete', company: company, user: cashier_user)
+cashier = Employee.create(company: company, user: cashier_user)
 
 
 # Root - You should change this password
@@ -42,7 +42,7 @@ root_user.save
               password: '123456', password_confirmation: '123456')
   u.role = client_role
   u.save
-  client = Client.new(name: user[0], cpf: user[1])
+  client = Client.new(cpf: user[1])
   client.user = u
   client.save
 end
@@ -77,7 +77,7 @@ end
 
 
 1.upto(15) do |x|
-  client = Client.find_by_name('claudia')
+  client = User.find_by_username('claudia').client
   p = Point.new
   p.cpf = client.cpf
   p.company = company
