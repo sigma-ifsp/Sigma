@@ -4,7 +4,9 @@
   <h3><%= promotion.name %></h3>
 
   <p><%= I18n.l(promotion.ending_date, :format => :long) %></p>
-  <p>
-    <%= points.sum(&:points) %> / <%= promotion.points_to_exchange %>
-  </p>
+  <div class="progress progress-striped">
+    <div class="bar" style="width: <%= points_percentage( points.sum(&:points) , promotion.points_to_exchange) %>;">
+      <%= points.sum(&:points) %> / <%= promotion.points_to_exchange %>
+    </div>
+  </div>
 <% end %>

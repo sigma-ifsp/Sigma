@@ -11,7 +11,7 @@
 root_role = Role.create(name: 'root', description: 'System admin')
 client_role = Role.create(name: 'client', description: 'Companies Client')
 admin_role = Role.create(name: 'admin', description: 'Company admin')
-cashier_role = Role.create(name: 'employee', description: 'Company employee')
+cashier_role = Role.create(name: 'cashier', description: 'Company employee')
 
 PromotionCategory.create([{ name: 'points'}, {name: 'value'}])
 
@@ -82,6 +82,6 @@ end
   p.cpf = client.cpf
   p.company = company
   p.promotion = Promotion.first(:offset => rand(Promotion.count))
-  p.value = 20.0
+  p.value = 60.0
   p.save
 end

@@ -4,6 +4,7 @@ class PromotionsControllerTest < ActionController::TestCase
   setup do
     employee = Employee.new(name: 'Employee')
     employee.stubs(:company => Company.new(name: 'Company 1'))
+    employee.stubs(:company_id => 66)
     user = User.new
     user.stubs(:role => Role.new(name: "admin"))
     user.stubs(:employee => employee)

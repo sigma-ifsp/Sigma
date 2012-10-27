@@ -6,4 +6,8 @@ class Role < ActiveRecord::Base
     where(name: 'client').first
   end
 
+  def to_s
+    self.name
+  end
+
 end

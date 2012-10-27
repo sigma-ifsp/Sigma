@@ -10,11 +10,13 @@ class Ability
     end
 
     if user.cashier?
-      can :read, Promotion
+      can :read, Promotion, :company_id => user.employee.try(:company_id)
+      can :read, Company, :id => user.employee.try(:company_id)
     end
 
     if user.admin?
       can :manage, Promotion, :user_id => user.id
+      can [:edit,:read,:update], Company, :id => user.employee.try(:company_id)
     end
 
     if user.client?

@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   # Associations
   belongs_to :role
-  has_many :users
+  has_one :client
   has_one :employee
 
   before_save :erase_temporary_password!

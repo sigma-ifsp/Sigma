@@ -5,26 +5,38 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  
-  <%#Login and Logout buttons %>
-  
-  <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> |
-    <%= link_to "Login", new_user_session_path %>
-  <% end %>
-
-
-
-
-<%= yield %>
+  <div class="nav-bar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <p class="navbar-text pull-right">
+        <% if user_signed_in? %>
+          <%= t('devise.sessions.signed_as') %> <strong><%= current_user.email %></strong>.
+          <%= link_to t('devise.buttons.edit_profile'), edit_user_registration_path %> |
+          <%= link_to t('devise.buttons.logout'), destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to t('devise.buttons.sign_up'), new_user_registration_path %> |
+          <%= link_to t('devise.buttons.login'), new_user_session_path %>
+        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid centralized">
+        <div id="logo"></div>
+        <div id="menu-bar">
+          <%= menu_for_user(current_user) if user_signed_in? %>
+        </div>
+        <div id="content-box" class="centralized">
+          <%= yield %>
+        </div>
+    </div>
+  </div>
 
 </body>
 </html>

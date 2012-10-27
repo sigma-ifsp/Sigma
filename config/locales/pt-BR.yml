@@ -227,6 +227,7 @@ pt-BR:
     sessions:
       signed_in: 'Autenticado com sucesso.'
       signed_out: 'Logout feito com sucesso.'
+      signed_as: 'Autenticado como'
     passwords:
       send_instructions: 'Você receberá um e-mail com instruções sobre como reinicializar sua senha em poucos minutos.'
       updated: 'Sua senha foi alterada com sucesso. Você está logado agora.'
@@ -259,8 +260,17 @@ pt-BR:
         subject: 'Instruções para reinicialização de senha'
       unlock_instructions:
         subject: 'Instruções para desbloqueio de conta'
+    buttons:
+      login: 'Entrar'
+      logout: 'Sair'
+      edit_profile: 'Editar perfil'
+      sign_up: 'Cadastrar-se'
   sigma:
     points: 'Pontos'
     points_by_promotion: 'Pontos por promoção'
     ending_date: 'Data de expiração'
     initial_date: 'Data inicial'
+    companies: 'Empresas'
+    promotions: 'Promoções'
+    profile: 'Perfil'
+    company: 'Empresa'
