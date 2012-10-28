@@ -85,3 +85,11 @@ end
   p.value = 60.0
   p.save
 end
+
+1.upto(10) do |x|
+  client = Client.first
+  e = Exchange.new
+  e.promotion = Promotion.first
+  e.client = client
+  e.save
+end
