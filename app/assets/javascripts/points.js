@@ -21,9 +21,8 @@ $(document).ready(function () {
           $("#client_balance").text(data.balance);
           }
         });
-
+  
       }      
-      alert("Teste "+url);
   });
 
   

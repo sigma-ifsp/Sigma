@@ -8,5 +8,8 @@ class ClientBalance < ActiveRecord::Base
   	self.save
   end
 
-end
+  def ready_to_exchange?
+  	self.balance >= self.promotion.points_to_exchange
+  end
 
+end

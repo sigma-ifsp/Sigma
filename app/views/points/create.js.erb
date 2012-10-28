@@ -1,7 +1,9 @@
 $(document).ready(function () {
-	
-	alert('<%= @balance.balance %>');
-
+	<% if @balance.ready_to_exchange? %>
+		/*
+			ready_to_exchange para exibir o botão
+		*/
+	<% end %>
 });
 
 													
