@@ -274,4 +274,6 @@ pt-BR:
     promotions: 'Promoções'
     profile: 'Perfil'
     company: 'Empresa'
-    exchanges: 'Trocas'
+    exchanges:
+      label: 'Trocas'
+      not_sucessful: 'Troca não realizada'
