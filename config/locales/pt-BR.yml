@@ -213,6 +213,26 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    models:
+      user: 'Usuário'
+      promotion: 'Promoção'
+      client: 'Cliente'
+      employee: 'Funcionário'
+    attributes:
+      user:
+        username: 'Login de acesso(padrão é o CPF)'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        current_password: 'Senha atual'
+      promotion:
+        name: 'Nome'
+        description: 'Descrição resumida'
+        image: 'Imagem de exibição'
+        initial_date: 'Data de ativação'
+        ending_date: 'Data de finalização'
+        points: 'Pontos por compra'
+        value: 'Valor por ponto'
+        points_to_exchange: 'Pontos para troca'
 
   devise:
     failure:
@@ -265,15 +285,45 @@ pt-BR:
       logout: 'Sair'
       edit_profile: 'Editar perfil'
       sign_up: 'Cadastrar-se'
+      cancel_account: 'Cancelar conta'
+      cancel_my_account: 'Cancelar minha conta'
+    sign_up: 'Novo cadastro'
+    sign_in: 'Entrar novamente'
+    hints:
+     leave_blank_password: "deixe em branco se você não quiser mudar"
+     need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"
   sigma:
-    points: 'Pontos'
+    points: 
+      title: 'Pontos'
+      new_point: 'Nova pontuação'
     points_by_promotion: 'Pontos por promoção'
     ending_date: 'Data de expiração'
     initial_date: 'Data inicial'
     companies: 'Empresas'
-    promotions: 'Promoções'
+    promotions:
+      new: 'Nova promoção'
+      title: 'Promoções'
+    promotion: 'Promoção'
     profile: 'Perfil'
     company: 'Empresa'
+    start: 'Início'
+    ending: 'Termino'
     exchanges:
       label: 'Trocas'
       not_sucessful: 'Troca não realizada'
+      explanation: ''
+    reports:
+     exchanges:
+      title: 'Trocas por período e promoção'
+      label: 'Relatório de trocas'
+      promotion_description: 'Trocas realizadas por dia, para promoção "%{name}"'
+    buttons:
+      send: 'Enviar'
+      confirm: 'Confirmar'
+      cancel: 'Cancelar'
+      back: 'Voltar'
+      update: 'Atualizar'
+    edit_profile: 'Editar cadastro'
+    dialogs:
+      are_you_sure: "Você tem certeza?"
+    please_sign_in: "Sua sessão expirou. Por favor, entre novamente"
