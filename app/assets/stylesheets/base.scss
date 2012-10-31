@@ -9,18 +9,15 @@
   padding: 10px;
 }
 
-#menu-bar {
-  width: 500px;
+ul#menu-bar {
   height: 30px;
   margin: 40px;
   float: right;
   li {
-    display: block;
-    float: left;
-    width: 120px;
+    display: inline-block;
     text-align: center;
-    line-height: 10px;
     font-size: 1.5em;
+    padding: 20px;
   }
 }
 
@@ -35,4 +32,13 @@
 #content-box {
   clear: both;
   margin-top: 200px;
+}
+
+.table-report {
+  text-align: center;
+  th, td {
+    font-size: 1.4em;
+    padding: 10px;
+  }
+  margin: 0 auto;
 }

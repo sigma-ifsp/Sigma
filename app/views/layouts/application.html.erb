@@ -29,10 +29,8 @@
   <div class="container-fluid">
     <div class="row-fluid centralized">
         <div id="logo"></div>
-        <div id="menu-bar">
-          <%= menu_for_user(current_user) if user_signed_in? %>
-        </div>
-        <div id="content-box" class="centralized">
+        <%= menu_for_user(current_user) if user_signed_in? %>
+        <div id="content-box" class="centralized row-fluid">
           <%= yield %>
         </div>
     </div>
