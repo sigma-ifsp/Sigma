@@ -1,4 +1,5 @@
 class PointsController < ApplicationController
+  load_and_authorize_resource
   before_filter :load_company
 
   # GET /points
@@ -90,6 +91,6 @@ class PointsController < ApplicationController
   private
 
   def load_company
-    @company = current_user.employee.company
+    @company = current_employee.company
   end
 end

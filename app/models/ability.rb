@@ -11,12 +11,14 @@ class Ability
 
     if user.cashier?
       can :read, Promotion, :company_id => user.employee.try(:company_id)
+      can :manage, Point
       can :read, Company, :id => user.employee.try(:company_id)
       can :balance, Client
     end
 
     if user.admin?
       can :manage, Promotion, :user_id => user.id
+      can :manage, Point
       can [:edit,:read,:update], Company, :id => user.employee.try(:company_id)
     end
 
