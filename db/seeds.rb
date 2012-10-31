@@ -76,8 +76,8 @@ end
 end
 
 
-1.upto(15) do |x|
-  client = User.find_by_username('claudia').client
+1.upto(20) do |x|
+  client = Client.find(3)
   p = Point.new
   p.cpf = client.cpf
   p.company = company
@@ -86,10 +86,10 @@ end
   p.save
 end
 
-1.upto(10) do |x|
-  client = Client.first
+1.upto(20) do |x|
   e = Exchange.new
-  e.promotion = Promotion.first
-  e.client = client
+  e.promotion_id = rand(10)+1
+  e.client_id = 3
+  e.created_at = (rand(5)+1).days.ago
   e.save
 end

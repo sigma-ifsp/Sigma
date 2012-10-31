@@ -13,7 +13,12 @@ Sigma::Application.routes.draw do
 
   resources :companies    
 
-  resources :exchanges
+  resources :exchanges do
+    collection do
+      post '/report'
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

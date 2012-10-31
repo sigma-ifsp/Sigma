@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require raphael.min
+//= require morris.min
+//= require jquery-ui.min
 //= require_tree .
