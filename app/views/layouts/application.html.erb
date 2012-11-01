@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
   <div class="nav-bar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
@@ -31,6 +30,8 @@
         <div id="logo"></div>
         <%= menu_for_user(current_user) if user_signed_in? %>
         <div id="content-box" class="centralized row-fluid">
+          <%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
+          <%= content_tag(:p, alert , :class => 'alert') if alert.present? %>
           <%= yield %>
         </div>
     </div>
