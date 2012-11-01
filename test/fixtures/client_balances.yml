@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  client: 
-  promotion: 
-  balance: 1
+  id: 1
+  client_id: 1
+  promotion_id: 1 
+  balance: 10
 
 two:
-  client: 
-  promotion: 
+  id: 2
+  client_id: 3 
+  promotion_id: 5
   balance: 1

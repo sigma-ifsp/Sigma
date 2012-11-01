@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+  $("#exchange").hide();
 
   $("#point_cpf").keydown(function(event) {
     if ( ! ( (event.which == 8 || event.which == 9 || event.which == 46 || event.which == 27) || 
@@ -15,13 +15,16 @@ $(document).ready(function () {
       if (cpf.length == 11){
         var url = "/clients/"+cpf+"/promotions/"+promotion_id+"/balance";
         $.get(url, function(data){ 
-          if (data == null || data == undefined){
-          $("#client_balance").text('');
+          if ( typeof(data) === "undefined" ){
+            $("#client_balance").text("Brasil");
           } else{
-          $("#client_balance").text(data.balance);
+            $("#exchange_client_id").val(data.client_id);
+            $("#exchange_promotion_id").val(promotion_id);
+            $("#client_balance").text(data.balance);
+            $("#exchange").show();
           }
         });
-  
+      
       }      
   });
 

@@ -50,7 +50,7 @@ class PointsController < ApplicationController
       if @point.save
         @balance = ClientBalance.find_by_promotion_id_and_client_id(@point.promotion, @point.client)
         format.js 
-        format.html { redirect_to @point, notice: 'Ponto atribuido com sucesso.' }
+        format.html { redirect_to new_point_path, notice: 'Ponto atribuido com sucesso.' }
         format.json { render json: @point, status: :created, location: @point }
       else
         format.html { render action: "new" }

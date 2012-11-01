@@ -28,7 +28,7 @@ class PointsControllerTest < ActionController::TestCase
       post :create, point: { value: @point.value, cpf: @point.cpf, promotion_id: @promotion.id }
     end
 
-    assert_redirected_to point_path(assigns(:point))
+    assert_redirected_to new_point_path()
   end
 
   test "should show point" do
