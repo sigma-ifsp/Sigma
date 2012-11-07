@@ -34,7 +34,8 @@ module ApplicationHelper
       link_to(I18n.t('sigma.points.title'), new_point_path),
       link_to(I18n.t('sigma.promotions.title'), promotions_path),
       link_to(I18n.t('sigma.company'), company_path(admin.company_id)),
-      link_to(I18n.t('sigma.reports.exchanges.label'), exchanges_path)
+      link_to(I18n.t('sigma.reports.exchanges.label'), exchanges_path),
+      link_to(I18n.t('sigma.reports.points.label'), points_path)
     ]
   end
 

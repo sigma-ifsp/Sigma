@@ -1,13 +1,12 @@
 <h1>Listing promotions</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Initial date</th>
     <th>Ending date</th>
     <th>Points</th>
     <th>Value</th>
-    <th>Company</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,20 +14,19 @@
 
 <% @promotions.each do |promotion| %>
   <tr>
-    <td><%= promotion.name %></td>
-    <td><%= promotion.initial_date %></td>
-    <td><%= promotion.ending_date %></td>
+    <td><%= link_to promotion.name, promotion %></td>
+    <td><%= l(promotion.initial_date) %></td>
+    <td><%= l(promotion.ending_date) %></td>
     <td><%= promotion.points %></td>
     <td><%= promotion.value %></td>
-    <td><%= promotion.company %></td>
-    <td><%= link_to 'Show', promotion %></td>
+    <td><%= link_to t('sigma.buttons.show'), promotion, class: 'btn btn-primary' %></td>
 
     <% if can? :update, promotion %>
       <td>
-        <%= link_to 'Edit', edit_promotion_path(promotion) %>
+        <%= link_to t('sigma.buttons.edit'), edit_promotion_path(promotion), class: 'btn' %>
       </td>
       <td>
-        <%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to t('sigma.buttons.destroy'), promotion, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </td>
     <% end %>
   </tr>

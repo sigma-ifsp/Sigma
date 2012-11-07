@@ -218,6 +218,7 @@ pt-BR:
       promotion: 'Promoção'
       client: 'Cliente'
       employee: 'Funcionário'
+      company: 'Empresa'
     attributes:
       user:
         username: 'Login de acesso(padrão é o CPF)'
@@ -233,7 +234,12 @@ pt-BR:
         points: 'Pontos por compra'
         value: 'Valor por ponto'
         points_to_exchange: 'Pontos para troca'
-
+      company:
+        name: 'Nome'
+        cpnj: 'CNPJ'
+        phone: 'Telefone'
+        website: 'Site'
+        email: 'E-mail de responsável'
   devise:
     failure:
       already_authenticated: 'Você já está logado.'
@@ -313,16 +319,25 @@ pt-BR:
       not_sucessful: 'Troca não realizada'
       explanation: ''
     reports:
-     exchanges:
-      title: 'Trocas por período e promoção'
-      label: 'Relatório de trocas'
-      promotion_description: 'Trocas realizadas por dia, para promoção "%{name}"'
+      points:
+        title: 'Total de pontos por período e promoção'
+        label: 'Relatório de pontos'
+        promotion_description: 'Pontos adquiridos para promoção "%{name}"'
+      exchanges:
+        title: 'Trocas por período e promoção'
+        label: 'Relatório de trocas'
+        promotion_description: 'Trocas realizadas por dia, para promoção "%{name}"'
     buttons:
       send: 'Enviar'
       confirm: 'Confirmar'
       cancel: 'Cancelar'
       back: 'Voltar'
       update: 'Atualizar'
+      new: 'Novo'
+      show: 'Mostar'
+      edit: 'Editar'
+      destroy: 'Excluir'
+      create: 'Cadastrar'
     edit_profile: 'Editar cadastro'
     dialogs:
       are_you_sure: "Você tem certeza?"
