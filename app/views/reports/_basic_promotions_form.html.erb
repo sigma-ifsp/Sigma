@@ -1,0 +1,20 @@
+<%= form_tag(form_path) do %>
+  <div class="field">
+    <%= label(:graph,:promotion_id, t('sigma.promotion')) %>
+    <%= collection_select(:graph, :promotion_id, @company.promotions, :id, :name, :prompt => false) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag(:graph_start, t('sigma.start')) %>
+    <%= text_field_tag(:graph_start, l(Date.yesterday), :required => 'required') %>
+  </div>
+
+  <div class="field">
+    <%= label_tag(:graph_ending, t('sigma.ending')) %>
+    <%= text_field_tag(:graph_ending,l(Date.today), :required => 'required') %>
+  </div>
+
+  <div class="field">
+    <%= submit_tag t('sigma.buttons.send'), :class => 'btn btn-primary' %>
+  </div>
+<% end %>

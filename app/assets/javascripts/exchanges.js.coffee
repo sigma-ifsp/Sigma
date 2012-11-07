@@ -9,6 +9,6 @@ jQuery ->
     ykeys: ['total']
     labels: ['Total per day']
 
-  $("#graph_start, #graph_ending").datepicker
+  $("#graph_start,#graph_ending").datepicker
     changeMonth: true
     changeYear: true

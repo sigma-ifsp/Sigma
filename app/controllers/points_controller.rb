@@ -5,7 +5,7 @@ class PointsController < ApplicationController
   # GET /points
   # GET /points.json
   def index
-    @points = Point.all
+    @points = Point.by_promotions(@company.promotions)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,6 +85,23 @@ class PointsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to points_url }
       format.json { head :no_content }
+    end
+  end
+
+  def report
+    begin
+      @start, @ending = params[:graph_start].to_date, params[:graph_ending].to_date
+    rescue
+      @start, @ending = Date.yesterday, Date.today
+    end
+
+    @promotion = Promotion.find(params[:graph][:promotion_id])
+    @company = @promotion.company
+    @points_report = Point.by_promotion(@promotion).
+      total_daily(@start,@ending)
+
+    respond_to do |format|
+      format.html
     end
   end
 

@@ -1,0 +1,32 @@
+<%= content_tag(:h2, t('sigma.reports.points.title')) %>
+
+<%= content_tag(:h3, @promotion.name) %>
+
+<%= link_to t('sigma.buttons.back'), :back %>
+
+<p>
+  <%= t('sigma.reports.points.promotion_description', :name => @promotion.name) %>
+</p>
+
+<%= content_tag(:div,'',:id => 'graphs', data: { exchanges: @points_report }) %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('datetime.prompts.day') %> </th>
+      <th>Total of clients</th>
+      <th>Total of points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @points_report.each do |daily_points| %>
+      <tr>
+        <td> <%= l(daily_points.day.to_date) %> </td>
+        <td> <%= daily_points.clients_count %> </td>
+        <td> <%= daily_points.total %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('sigma.buttons.back'), :back %>

@@ -75,15 +75,17 @@ end
   p.save
 end
 
-
-1.upto(20) do |x|
-  client = Client.find(3)
-  p = Point.new
-  p.cpf = client.cpf
-  p.company = company
-  p.promotion = Promotion.first(:offset => rand(Promotion.count))
-  p.value = 60.0
-  p.save
+(30.days.ago.to_date..Date.today).each do |date|
+  1.upto(2) do |x|
+    client = Client.first(:offset => rand(Client.count))
+    p = Point.new
+    p.cpf = client.cpf
+    p.company = company
+    p.promotion = Promotion.first(:offset => rand(Promotion.count))
+    p.value = 50.0
+    p.created_at = date.to_time
+    p.save
+  end
 end
 
 1.upto(20) do |x|

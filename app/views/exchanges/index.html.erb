@@ -1,2 +1,2 @@
 <%= content_tag(:h2, t('sigma.reports.exchanges.title')) %>
-<%= render :partial => 'form' %>
+<%= render :partial => '/reports/basic_promotions_form', locals: {  :form_path => report_exchanges_path } %>
