@@ -44,4 +44,8 @@ module ApplicationHelper
       link_to(I18n.t('sigma.companies'), companies_path)
     ]
   end
+
+  def current_page_class
+    "#{params[:controller].gsub("/","-")}-#{params[:action]}"
+  end
 end

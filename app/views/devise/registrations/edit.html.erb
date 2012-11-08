@@ -6,22 +6,21 @@
     <% if resource.client.present? %>
       <label>CPF:</label>
       <%= resource.client.try(:cpf) %>
-      <br />
     <% end %>
   </div>
-  <div><%= f.label :name %><br />
+  <div><%= f.label :name %>
   <%= f.text_field :name %></div>
 
-  <div><%= f.label :username %><br />
+  <div><%= f.label :username %>
   <%= f.text_field :username %></div>
 
-   <div><%= f.label :email %><br />
+   <div><%= f.label :email %>
   <%= f.email_field :email %></div>
   
-<div><%= f.label :password %> <i>(<%= t('devise.hints.leave_blank_password') %>)</i><br />
+<div><%= f.label :password %> <i>(<%= t('devise.hints.leave_blank_password') %>)</i> <br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
 <div><%= f.label :current_password %> <i>(<%= t('devise.hints.need_to_inform_password') %>)</i><br />

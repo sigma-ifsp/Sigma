@@ -225,6 +225,7 @@ pt-BR:
         password: 'Senha'
         password_confirmation: 'Confirmação de senha'
         current_password: 'Senha atual'
+        remember_me: 'Manter-me conectado'
       promotion:
         name: 'Nome'
         description: 'Descrição resumida'
@@ -294,7 +295,7 @@ pt-BR:
       cancel_account: 'Cancelar conta'
       cancel_my_account: 'Cancelar minha conta'
     sign_up: 'Novo cadastro'
-    sign_in: 'Entrar novamente'
+    sign_in: 'Acessar'
     hints:
      leave_blank_password: "deixe em branco se você não quiser mudar"
      need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"
