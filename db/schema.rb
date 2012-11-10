@@ -71,12 +71,12 @@ ActiveRecord::Schema.define(:version => 20121023213804) do
 
   create_table "points", :force => true do |t|
     t.integer  "client_id"
-    t.decimal  "value"
+    t.decimal  "value",        :precision => 10, :scale => 0
     t.integer  "points"
     t.integer  "promotion_id"
     t.integer  "company_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   add_index "points", ["client_id"], :name => "index_points_on_client_id"
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(:version => 20121023213804) do
     t.date     "initial_date"
     t.date     "ending_date"
     t.integer  "points"
-    t.decimal  "value"
+    t.decimal  "value",                 :precision => 10, :scale => 0
     t.integer  "company_id"
     t.integer  "user_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.integer  "promotion_category_id"
     t.integer  "points_to_exchange"
     t.text     "description"
