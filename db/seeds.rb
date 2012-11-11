@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -19,7 +20,7 @@ PromotionCategory.create([{ name: 'points'}, {name: 'value'}])
 company = Company.create(name: 'Mit su yan', cnpj: '11284880000191', email: 'mit@email.com')
 
 # Admin user
-admin_user = User.new(username: 'maria', email: 'admin@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
+admin_user = User.new(username: 'maria', email: 'admin@empresa.com.br', password: '123456', password_confirmation: '123456')
 admin_user.role = admin_role
 admin_user.save
 admin = Employee.create(company: company, user: admin_user)
@@ -38,7 +39,7 @@ root_user.save
 # Clients
 [['antonio','61817851160'],['joao','73848058642'],
   ['claudia','02851238078'],['fernanda', '52391246714']].each do |user|
-  u = User.new(username: user[0], email: "#{user[0]}@sigma.com.br", 
+  u = User.new(username: user[1], email: "#{user[0]}@sigma.com.br", 
               password: '123456', password_confirmation: '123456')
   u.role = client_role
   u.save
@@ -50,7 +51,7 @@ end
 
 # Promotions by value
 1.upto(10) do |x|
-  p = Promotion.new({name: "Promotion #{x} - by value", initial_date: 1.day.ago,
+  p = Promotion.new({name: "Promoção #{x}", initial_date: 1.day.ago,
     ending_date: 1000.days.from_now,
     value: 10, 
     points: 1,
@@ -64,7 +65,7 @@ end
 
 # Promotions by points
 1.upto(10) do |x|
-  p = Promotion.new({name: "Promotion #{x} - by point", initial_date: 1.day.ago,
+  p = Promotion.new({name: "Promoção #{x}", initial_date: 1.day.ago,
     ending_date: 1000.days.from_now,
     points: 1,
     description: "Promotion #{x}",
