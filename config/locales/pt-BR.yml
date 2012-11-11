@@ -334,7 +334,7 @@ pt-BR:
       back: 'Voltar'
       update: 'Atualizar'
       new: 'Novo'
-      show: 'Mostar'
+      show: 'Mostrar'
       edit: 'Editar'
       destroy: 'Excluir'
       create: 'Cadastrar'
