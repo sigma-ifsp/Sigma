@@ -2,6 +2,7 @@ Sigma::Application.routes.draw do
   get "contact/company"
 
   get "contact/client"
+  resources :employees
 
   get "welcome/index"
 
@@ -21,7 +22,9 @@ Sigma::Application.routes.draw do
 
   devise_for :users
 
-  resources :companies    
+  resources :companies do
+    resources :employees
+  end
 
   resources :exchanges do
     collection do

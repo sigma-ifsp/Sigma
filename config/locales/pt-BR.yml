@@ -225,6 +225,8 @@ pt-BR:
         password: 'Senha'
         password_confirmation: 'Confirmação de senha'
         current_password: 'Senha atual'
+        role_id: 'Papel'
+        name: 'Nome'
         remember_me: 'Manter-me conectado'
       promotion:
         name: 'Nome'
@@ -295,10 +297,18 @@ pt-BR:
       cancel_account: 'Cancelar conta'
       cancel_my_account: 'Cancelar minha conta'
     sign_up: 'Novo cadastro'
-    sign_in: 'Acessar'
+    sign_in: 'Entrar novamente'
     hints:
      leave_blank_password: "deixe em branco se você não quiser mudar"
      need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"
+  employees:
+    index:
+      title: 'Listando funcionários'
+    new:
+      title: 'Novo funcionário'
+  companies:
+    index:
+      employees: 'Funcionários'
   sigma:
     points: 
       title: 'Pontos'
