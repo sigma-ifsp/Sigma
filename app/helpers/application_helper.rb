@@ -12,7 +12,7 @@ module ApplicationHelper
              []
            end
     content_tag :ul,
-      menu.map {|link| content_tag(:li, link) }.join("\n").html_safe, id: 'menu-bar'
+      menu.map {|link| content_tag(:li, link) }.join("\n").html_safe, id: 'menu-bar', :class => 'nav-bar'
   end
 
   def menu_for_client(client)
