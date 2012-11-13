@@ -32,23 +32,33 @@ a {
 }
 
 ul#menu-bar {
-  height: 30px;
+  height: 50px;
   margin: 40px;
-  width: 60%;
   float: right;
+  background-image: url('/assets/grey.png');
+  line-height: 5px;
+  a {
+   color: $ocean-green;
+  }
+  a:hover {
+   color: #666;
+   text-decoration: none;
+  }
   li {
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
-    padding: 20px;
+    padding: 15px;
   }
+  border-radius: 10px;
 }
 
 #logo {
-  background-image: url(/assets/logo_big.jpg);
-  width: 235px;
-  height: 160px;
+  background-image: url(/assets/logo.jpg);
+  width: 162px;
+  height: 110px;
   margin: 45px 5px;
+  background-repeat: no-repeat;
   float: left;
 }
 
@@ -92,6 +102,13 @@ ul#menu-bar {
   padding: 7px 9px;
 }
 
+.form-signin.container {
+  h2 {
+    width: 120px;
+    float: left;
+  }
+}
+
 .devise-sessions-new {
   background-image: url('/assets/people.jpg');
   background-position: top right;
@@ -100,5 +117,28 @@ ul#menu-bar {
   }
   .top-bar {
     display: none;
+  }
+
+  #logo {
+    display: none;
+  }
+  .user-session-logo {
+    float: right;
+    display: block;
+  }
+  .login-box label {
+    clear: both;
+  }
+  #content-box {
+    margin-top: 100px;
+  }
+}
+.remember-me-box {
+  label {
+    width: 250px;
+  }
+  input {
+    float: left;
+    margin-right: 10px;
   }
 }
