@@ -31,26 +31,35 @@ a {
   padding: 10px;
 }
 
+h1, h2 {
+  color: $ocean-green;
+}
+
 ul#menu-bar {
-  height: 50px;
+  min-height: 50px;
   margin: 40px;
   float: right;
-  background-image: url('/assets/grey.png');
   line-height: 5px;
+  background-image: url('/assets/grey.png');
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
   a {
    color: $ocean-green;
   }
+
   a:hover {
    color: #666;
    text-decoration: none;
   }
+
   li {
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
     padding: 15px;
   }
-  border-radius: 10px;
+
 }
 
 #logo {
