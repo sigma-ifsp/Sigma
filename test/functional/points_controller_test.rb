@@ -2,15 +2,15 @@ require 'test_helper'
 
 class PointsControllerTest < ActionController::TestCase
   setup do
+    Client.delete_all
     @promotion = promotions(:two)
     @point = points(:one)
-    @point.cpf = '41244527807'
+    @point.cpf = '50422458716'
 
     user = User.new
     user.role = Role.new(name: 'cashier')
     @controller.stubs(:current_user).returns(user)
     @controller.stubs(:current_employee).returns(Employee.new(:company => Company.new))
-  
   end
 
   test "should get index" do
