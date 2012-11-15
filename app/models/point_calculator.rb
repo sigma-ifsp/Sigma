@@ -2,7 +2,11 @@
 # by given value end promotion
 class PointCalculator
 
-  attr_reader :value, :promotion
+  # Represents the monetary value of points
+  attr_reader :value
+  # The promotions associated with the point
+  attr_reader :promotion
+
   def initialize(value, promotion)
     @value = value
     @promotion = promotion

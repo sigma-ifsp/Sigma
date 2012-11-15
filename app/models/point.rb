@@ -4,9 +4,8 @@ class Point < ActiveRecord::Base
   belongs_to :company
   attr_accessible :value, :cpf, :promotion_id, :company_id
   validate :check_client_cpf
-  before_save :calculate_points
-  after_save :update_balance
 
+  # Fetches points by promotions
   scope :by_promotions, lambda {|promotions| {
     :include => :promotion, :conditions => { :promotion_id => promotions }
   }}
@@ -26,10 +25,6 @@ class Point < ActiveRecord::Base
     self.client = client
   end
 
-  def calculate_points
-    self.points = PointCalculator.new(self.value, self.promotion).points
-  end
-
   # Group and count the points by date of creation
   def self.total_daily(start = Date.today.beginning_of_month, ending = Date.today.end_of_month)
     joins(:promotion).
@@ -46,11 +41,6 @@ class Point < ActiveRecord::Base
     if not Cpf.new(@cpf).valido?
       errors.add :cpf, I18n.t('errors.messages.cpf_is_not_valid')
     end
-  end
-
-  def update_balance
-    balance = ClientBalance.find_or_create_by_client_id_and_promotion_id(self.client_id, self.promotion_id)
-    balance.increment_points(self.points)
   end
 
 end
