@@ -17,3 +17,5 @@
 /coverage/
 /doc/
 *~
+/Capfile
+/config/deploy.rb

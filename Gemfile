@@ -4,7 +4,7 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'thin'
 gem 'mysql2'
 gem 'devise'
 gem 'cancan'
@@ -44,6 +44,7 @@ group :test do
   gem 'ruby-prof'
   # test coverage
   gem 'simplecov', :require => false
+  gem 'rake'
 end
 
 # To use ActiveModel has_secure_password
@@ -56,7 +57,7 @@ end
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
