@@ -20,13 +20,13 @@ PromotionCategory.create([{ name: 'points'}, {name: 'value'}])
 company = Company.create(name: 'Mit su yan', cnpj: '11284880000191', email: 'mit@email.com')
 
 # Admin user
-admin_user = User.new(username: 'maria', email: 'admin@empresa.com.br', password: '123456', password_confirmation: '123456')
+admin_user = User.new(username: 'admin', email: 'admin@empresa.com.br', password: '123456', password_confirmation: '123456')
 admin_user.role = admin_role
 admin_user.save
 admin = Employee.create(company: company, user: admin_user)
 
 # Cashier
-cashier_user = User.new(username: 'ivete', email: 'cashier@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
+cashier_user = User.new(username: 'caixa', email: 'cashier@mitsuyan.com.br', password: '123456', password_confirmation: '123456')
 cashier_user.role = cashier_role
 cashier_user.save
 cashier = Employee.create(company: company, user: cashier_user)
@@ -37,9 +37,9 @@ root_user = User.create(username: 'root', email: 'root@sigma.com.br', password: 
 root_user.role = root_role
 root_user.save
 # Clients
-[['antonio','61817851160'],['joao','73848058642'],
-  ['claudia','02851238078'],['fernanda', '52391246714']].each do |user|
-  u = User.new(username: user[1], email: "#{user[0]}@sigma.com.br", 
+[['cliente1','61817851160'],['cliente2','73848058642'],
+  ['cliente3','02851238078'],['cliente4', '52391246714']].each do |user|
+  u = User.new(username: user[0], email: "#{user[0]}@sigma.com.br", 
               password: '123456', password_confirmation: '123456')
   u.role = client_role
   u.save
