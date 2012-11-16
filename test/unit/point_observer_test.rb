@@ -8,14 +8,6 @@ class PointObserverTest < ActiveSupport::TestCase
     @observer = PointObserver.instance
   end
 
-  test '#before_save calculate points' do
-    calc = PointCalculator.new(@point.value, @promotion)
-    PointCalculator.expects(:new).
-      with(@point.value, @point.promotion).
-      returns(calc)
-    @observer.before_save(@point)
-  end
-
   test '#after_save update balance' do
     ClientBalance.expects(:find_or_create_by_client_id_and_promotion_id).
       with(@point.client_id, @point.promotion_id).returns(ClientBalance.new)
