@@ -30,7 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.1.0.1)
+    bootstrap-sass (2.1.1.0)
     brI18n (3.3.0)
       actionpack (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -63,12 +63,12 @@ GEM
       activesupport (>= 3.0.0)
     builder (3.0.3)
     cancan (1.6.8)
-    capistrano (2.5.21)
+    capistrano (2.13.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.0.0)
+      net-ssh-gateway (>= 1.1.0)
     choice (0.1.6)
     cocaine (0.3.0)
     coderay (1.0.8)
@@ -95,7 +95,7 @@ GEM
     guard-test (0.5.0)
       guard (>= 1.1.0)
       test-unit (~> 2.2)
-    highline (1.6.13)
+    highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -120,7 +120,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.5.2)
+    net-ssh (2.6.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     orm_adapter (0.4.0)
@@ -214,10 +214,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.1)
+  bootstrap-sass (~> 2.1.1.0)
   brazilian-rails
   cancan
-  capistrano
+  capistrano (~> 2.13.5)
   coffee-rails (~> 3.2.1)
   devise
   guard-test
