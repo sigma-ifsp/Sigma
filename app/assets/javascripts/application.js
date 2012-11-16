@@ -15,4 +15,9 @@
 //= require raphael.min
 //= require morris.min
 //= require jquery-ui.min
+//= require bootstrap
 //= require_tree .
+
+$('.carousel').carousel({
+  interval: 2000
+});

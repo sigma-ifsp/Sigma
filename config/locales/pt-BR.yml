@@ -343,3 +343,13 @@ pt-BR:
     dialogs:
       are_you_sure: "Você tem certeza?"
     please_sign_in: "Sua sessão expirou. Por favor, entre novamente"
+    footer:
+      address: 'Endereço: Rua Pedro Vicente, 250 - São Paulo, SP'
+    welcome:
+      about_us: 'Sobre nós'
+      services: 'Serviços'
+      sign_up_company: 'Cadastre sua empresa'
+      retain_customers: 'Fidelize clientes'
+      main_quote:
+        text: 'Fidelizar clientes, é criar um elo entre confiança e segurança.'
+        author: 'Equipe Sigma'

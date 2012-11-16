@@ -21,10 +21,11 @@ a {
     color: #fff;
   }
 }
-
 .centralized {
+  margin: 0 20px;
+}
+#content {
   width: 80%;
-  margin: 0 auto;
 }
 .row-fluid {
   margin: 0 auto;
@@ -63,18 +64,21 @@ ul#menu-bar {
 
 }
 
+.welcome #logo {
+  margin: 15px 40px;
+}
+
 #logo {
-  background-image: url(/assets/logo.jpg);
   width: 162px;
   height: 110px;
-  margin: 45px 5px;
-  background-repeat: no-repeat;
+  margin: 45px 40px;
   float: left;
 }
 
 #content-box {
   clear: both;
-  margin-top: 200px;
+  margin: 0 40px;
+  margin-top: 150px;
 }
 
 .table-report {
@@ -89,10 +93,17 @@ ul#menu-bar {
   max-width: 300px;
 }
 .form-signin, .small-box {
-  padding: 19px 29px 29px;
   margin: 0 auto 20px;
+}
+#content, .form-signin, .small-box {
   background-color: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
   border: 1px solid #e5e5e5;
+}
+
+.form-signin, .small-box {
+  padding: 19px 29px 29px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -120,12 +131,16 @@ ul#menu-bar {
 }
 
 .devise-sessions-new {
-  background-image: url('/assets/people.jpg');
-  background-position: top right;
   .small-box {
-    background: none;
+    background: white;
   }
   .top-bar {
+    display: none;
+  }
+  #content {
+    background: none;
+  }
+  #menu-bar {
     display: none;
   }
 
@@ -151,4 +166,13 @@ ul#menu-bar {
     float: left;
     margin-right: 10px;
   }
+}
+
+#carousel-sigma {
+  width: 100%;
+}
+
+.footer {
+  bottom: 0;
+  text-align: center;
 }

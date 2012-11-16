@@ -1,6 +1,12 @@
 Sigma::Application.routes.draw do
+  get "contact/company"
+
+  get "contact/client"
+
   get "welcome/index"
 
+  match 'about_us' => 'welcome#about_us'
+  match 'services' => 'welcome#services'
   match 'clients/:id' => 'clients#show'
   match 'clients/:id/points' => 'clients#points'
   match 'clients/:cpf/promotions/:promotion_id/balance' => 'clients#balance'

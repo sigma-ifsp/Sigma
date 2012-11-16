@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sigma</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body class="<%= current_page_class %>">
-
-  <div class="nav-bar navbar-inverse navbar-fixed-top">
-    <div class="top-bar">
-      <div class="container-fluid">
-        <p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-          <%= t('devise.sessions.signed_as') %> <strong><%= current_user.email %></strong>.
-          <%= link_to t('devise.buttons.edit_profile'), edit_user_registration_path %> |
-          <%= link_to t('devise.buttons.logout'), destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to t('devise.buttons.sign_up'), new_user_registration_path %> |
-          <%= link_to t('devise.buttons.login'), new_user_session_path %>
-        <% end %>
-        </p>
+  <head>
+    <title>Sigma</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="<%= current_page_class %> <%= params[:controller] %>">
+    <div class="nav-bar navbar-inverse navbar-fixed-top">
+      <div class="top-bar">
+        <div class="container-fluid">
+          <% if user_signed_in? %>
+            <p class="navbar-text pull-right">
+            <%= t('devise.sessions.signed_as') %> <strong><%= current_user.email %></strong>.
+            <%= link_to t('devise.buttons.edit_profile'), edit_user_registration_path %> |
+            <%= link_to t('devise.buttons.logout'), destroy_user_session_path, method: :delete %>
+            </p>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row-fluid centralized small-box">
-        <div id="logo"></div>
-        <%= menu_for_user(current_user) if user_signed_in? %>
-        <div id="content-box" class="centralized row-fluid">
+    <div class="container-fluid">
+      <div id="content" class="row-fluid centralized">
+        <h1 id="logo"><a href="/"><%= image_tag '/assets/logo.jpg', :alt => 'Sigma Fidelidade' %></a></h1>
+        <%= menu_for_user(current_user || User.new) %>
+        <div id="content-box" class="centralized">
           <%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
           <%= content_tag(:p, alert , :class => 'alert') if alert.present? %>
           <%= yield %>
         </div>
+        <div class="footer">
+          <address>
+            <%= t('sigma.footer.address') %>
+          </address>
+        </div>
+      </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
