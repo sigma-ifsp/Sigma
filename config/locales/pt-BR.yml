@@ -221,7 +221,7 @@ pt-BR:
       company: 'Empresa'
     attributes:
       user:
-	    name: 'Nome'
+        name: 'Nome'
         username: 'Login de acesso(padrão é o CPF)'
         password: 'Senha'
         password_confirmation: 'Confirmação de senha'
@@ -297,27 +297,27 @@ pt-BR:
       cancel_my_account: 'Cancelar minha conta'
     sign_up: 'Novo cadastro'
     sign_in: 'Acessar'
-	forget_password: 'Esqueceu a senha?'
+    forget_password: 'Esqueceu a senha?'
     hints:
      leave_blank_password: "deixe em branco se você não quiser mudar"
      need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"
   sigma:
     points: 
       title: 'Pontos'
-	  successfully_created: 'Ponto atribuido com sucesso.'
-	  successfully_updated: 'Ponto corrigido com sucesso.'
+      successfully_created: 'Ponto atribuido com sucesso.'
+      successfully_updated: 'Ponto corrigido com sucesso.'
       new_point: 'Nova pontuação'
     points_by_promotion: 'Pontos por promoção'
     ending_date: 'Data de expiração'
     initial_date: 'Data inicial'
     companies: 'Empresas'
-	companies_message:
-	  successfully_created: 'Empresa cadastrada com sucesso.'
-	  successfully_updated: 'Empresa atualizada com sucesso.'
+    companies_message:
+      successfully_created: 'Empresa cadastrada com sucesso.'
+      successfully_updated: 'Empresa atualizada com sucesso.'
     promotions:
       new: 'Nova promoção'
-	  successfully_created: 'Promoção criada com sucesso.'
-	  successfully_updated: 'Promoção atualizada com sucesso.'
+      successfully_created: 'Promoção criada com sucesso.'
+      successfully_updated: 'Promoção atualizada com sucesso.'
       title: 'Promoções'
     promotion: 'Promoção'
     profile: 'Perfil'
