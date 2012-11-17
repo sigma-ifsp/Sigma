@@ -304,6 +304,7 @@ pt-BR:
   employees:
     index:
       title: 'Listando funcionários'
+      new: 'Novo funcionário'
     new:
       title: 'Novo funcionário'
   companies:
