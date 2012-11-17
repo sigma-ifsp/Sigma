@@ -29,8 +29,6 @@
   <div><%= f.submit "Update" %></div>
 <% end %>
 
-<h3><%= t('devise.buttons.cancel_account') %></h3>
-
 <p><%= link_to t('devise.buttons.cancel_my_account'), registration_path(resource_name), :data => { :confirm => t('sigma.dialogs.are_you_sure') }, :method => :delete %>.</p>
 
 <%= link_to t('sigma.buttons.back'), :back %>

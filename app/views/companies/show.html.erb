@@ -3,27 +3,27 @@
   <%= image_tag(@company.image.url) %>
 </p>
 <p>
-  <b>Name:</b>
+  <b><%= t(activerecord.attributes.company.name) %>:</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b>Cnpj:</b>
+  <b><%= t(activerecord.attributes.company.cnpj) %>:</b>
   <%= @company.cnpj %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b><%= t(activerecord.attributes.company.phone) %>:</b>
   <%= @company.phone %>
 </p>
 
 <p>
-  <b>Website:</b>
+  <b><%= t(activerecord.attributes.company.website) %>:</b>
   <%= @company.website %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= t(activerecord.attributes.company.email) %>:</b>
   <%= @company.email %>
 </p>
 
