@@ -14,12 +14,12 @@
 
 <% @companies.each do |company| %>
   <tr>
-    <td><%= company.name %></td>
+    <td><%= link_to company.name, company %></td>
     <td><%= company.cnpj %></td>
     <td><%= company.phone %></td>
     <td><%= company.website %></td>
     <td><%= company.email %></td>
-    <td><%= link_to t('sigma.buttons.show'), company, class: 'btn btn-primary' %></td>
+    <td><%= link_to t('.employees'), company_employees_path(company), class: 'btn btn-primary' %></td>
     <td><%= link_to t('sigma.buttons.edit'), edit_company_path(company), class: 'btn' %></td>
     <td><%= link_to t('sigma.buttons.destroy'), company, method: :delete,
       data: { confirm: t('sigma.dialogs.are_you_sure') }, class: 'btn btn-danger' %></td>

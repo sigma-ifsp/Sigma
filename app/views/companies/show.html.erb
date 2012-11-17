@@ -3,30 +3,30 @@
   <%= image_tag(@company.image.url) %>
 </p>
 <p>
-  <b><%= t(activerecord.attributes.company.name) %>:</b>
+<b><%= Company.human_attribute_name("name") %>:</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.company.cnpj) %>:</b>
+<b><%= Company.human_attribute_name("cnpj") %>:</b>
   <%= @company.cnpj %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.company.phone) %>:</b>
+<b><%= Company.human_attribute_name("phone") %>:</b>
   <%= @company.phone %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.company.website) %>:</b>
+<b><%= Company.human_attribute_name("website") %>:</b>
   <%= @company.website %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.company.email) %>:</b>
+<b><%= Company.human_attribute_name("email") %>:</b>
   <%= @company.email %>
 </p>
 
-
+<%= link_to t('companies.index.employees'), company_employees_path(@company) %> |
 <%= link_to t('sigma.buttons.edit'), edit_company_path(@company) %> |
 <%= link_to t('sigma.buttons.back'), companies_path %>

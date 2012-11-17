@@ -108,6 +108,6 @@ class PointsController < ApplicationController
   private
 
   def load_company
-    @company = current_employee.company
+    @company ||= current_employee.company
   end
 end

@@ -2,11 +2,11 @@
 
 <table class="table">
   <tr>
-    <th><%= t(activerecord.attributes.promotion.name) %></th>
-    <th><%= t(activerecord.attributes.promotion.initial_date) %></th>
-    <th><%= t(activerecord.attributes.promotion.ending_date) %></th>
-    <th><%= t(activerecord.attributes.promotion.points) %></th>
-    <th><%= t(activerecord.attributes.promotion.value) %></th>
+    <th><%= Promotion.human_attribute_name('name') %></th>
+    <th><%= Promotion.human_attribute_name('initial_date') %></th>
+    <th><%= Promotion.human_attribute_name('ending_date') %></th>
+    <th><%= Promotion.human_attribute_name('points') %></th>
+    <th><%= Promotion.human_attribute_name('value') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,7 +26,7 @@
         <%= link_to t('sigma.buttons.edit'), edit_promotion_path(promotion), class: 'btn' %>
       </td>
       <td>
-        <%= link_to t('sigma.buttons.destroy'), promotion, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <%= link_to t('sigma.buttons.destroy'), promotion, method: :delete, data: { confirm: t('sigma.dialogs.are_you_sure') }, class: 'btn btn-danger' %>
       </td>
     <% end %>
   </tr>
@@ -35,4 +35,4 @@
 
 <br />
 
-<%= link_to <%= t(sigma.promotions.new) %>, new_promotion_path %>
+<%= link_to t('sigma.promotions.new'), new_promotion_path %>

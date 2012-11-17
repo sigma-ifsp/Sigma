@@ -4,32 +4,32 @@
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.promotion.name) %>:</b>
+  <b><%= Promotion.human_attribute_name('name') %>:</b>
   <%= @promotion.name %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.promotion.initial_date) %>:</b>
+  <b><%= Promotion.human_attribute_name('initial_date') %>:</b>
   <%= @promotion.initial_date %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.promotion.ending_date) %>:</b>
+  <b><%= Promotion.human_attribute_name('ending_date') %>:</b>
   <%= @promotion.ending_date %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.promotion.points) %>:</b>
+  <b><%= Promotion.human_attribute_name('points') %>:</b>
   <%= @promotion.points %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.promotion.value) %>:</b>
+  <b><%= Promotion.human_attribute_name('value') %>:</b>
   <%= @promotion.value %>
 </p>
 
 <p>
-  <b><%= t(activerecord.attributes.company.name) %>:</b>
+  <b><%= Company.model_name.human %>:</b>
   <%= @promotion.company %>
 </p>
 

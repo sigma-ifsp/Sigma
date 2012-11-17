@@ -11,7 +11,8 @@ class Company < ActiveRecord::Base
 
   has_attached_file :image,
     :path => ":rails_root/public/system/companies/:attachment/:id/:style/:filename",
-    :url => "/system/companies/:attachment/:id/:style/:filename"
+    :url => "/system/companies/:attachment/:id/:style/:filename",
+    :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   def to_s
     self.name
