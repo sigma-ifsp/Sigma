@@ -2,6 +2,12 @@
 $dutch-teal: #1693A5;
 $ocean-green: #127886;
 
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
 body {
   background-image: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
 }
@@ -42,9 +48,6 @@ ul#menu-bar {
   margin: 40px;
   float: right;
   line-height: 5px;
-  background-image: url('/assets/grey.png');
-  border: 1px solid #ccc;
-  border-radius: 10px;
 
   a {
    color: $ocean-green;
@@ -56,12 +59,14 @@ ul#menu-bar {
   }
 
   li {
+    border-radius: 10px;
     display: inline-block;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding: 15px;
+    background-image: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
+    @include box-shadow(5px 5px 5px #888);
   }
-
 }
 
 .welcome #logo {
