@@ -49,7 +49,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.save
-        format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
+        format.html { redirect_to @promotion, notice: t('sigma.promotions.successfully_created') }
         format.json { render json: @promotion, status: :created, location: @promotion }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.update_attributes(params[:promotion])
-        format.html { redirect_to @promotion, notice: 'Promotion was successfully updated.' }
+        format.html { redirect_to @promotion, notice: t('sigma.promotions.successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

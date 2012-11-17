@@ -304,13 +304,20 @@ pt-BR:
   sigma:
     points: 
       title: 'Pontos'
+	  successfully_created: 'Ponto atribuido com sucesso.'
+	  successfully_updated: 'Ponto corrigido com sucesso.'
       new_point: 'Nova pontuação'
     points_by_promotion: 'Pontos por promoção'
     ending_date: 'Data de expiração'
     initial_date: 'Data inicial'
     companies: 'Empresas'
+	companies_message:
+	  successfully_created: 'Empresa cadastrada com sucesso.'
+	  successfully_updated: 'Empresa atualizada com sucesso.'
     promotions:
       new: 'Nova promoção'
+	  successfully_created: 'Promoção criada com sucesso.'
+	  successfully_updated: 'Promoção atualizada com sucesso.'
       title: 'Promoções'
     promotion: 'Promoção'
     profile: 'Perfil'

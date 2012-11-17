@@ -51,7 +51,7 @@ class PointsController < ApplicationController
       if @point.save
         @balance = ClientBalance.find_by_promotion_id_and_client_id(@point.promotion, @point.client)
         format.js 
-        format.html { redirect_to @point, notice: 'Ponto atribuido com sucesso.' }
+        format.html { redirect_to @point, notice: t('sigma.points.successfully_created') }
         format.json { render json: @point, status: :created, location: @point }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class PointsController < ApplicationController
 
     respond_to do |format|
       if @point.update_attributes(params[:point])
-        format.html { redirect_to @point, notice: 'Point was successfully updated.' }
+        format.html { redirect_to @point, notice: t('sigma.points.successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
