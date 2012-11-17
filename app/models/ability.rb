@@ -19,6 +19,7 @@ class Ability
     if user.admin?
       can :manage, Promotion, :user_id => user.id
       can :manage, Point
+      can :manage, Employee, :company_id => user.employee.try(:company_id)
       can [:edit,:read,:update], Company, :id => user.employee.try(:company_id)
     end
 

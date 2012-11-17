@@ -29,6 +29,8 @@ class EmployeesControllerTest < ActionController::TestCase
   end
 
   test "should show employee" do
+    @employee.user = users(:john)
+    @employee.save
     get :show, id: @employee, :company_id => @company.id
     assert_response :success
   end
@@ -40,7 +42,7 @@ class EmployeesControllerTest < ActionController::TestCase
 
   test "should update employee" do
     put :update, id: @employee, employee: {  }, :company_id => @company.id
-    assert_redirected_to employee_path(assigns(:employee))
+    assert_redirected_to company_employee_path(assigns(:company), assigns(:employee))
   end
 
   test "should destroy employee" do
@@ -48,6 +50,6 @@ class EmployeesControllerTest < ActionController::TestCase
       delete :destroy, id: @employee,:company_id => @company.id
     end
 
-    assert_redirected_to employees_path
+    assert_redirected_to company_employees_path(@company)
   end
 end

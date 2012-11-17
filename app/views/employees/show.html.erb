@@ -1,10 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <b>Company:</b>
-  <%= @employee.company_id %>
+<strong><%= User.human_attribute_name("name") %></strong>:
+<%= @employee.name %>
 </p>
 
+<p>
+<strong><%= User.human_attribute_name("username") %></strong>:
+<%= @employee.user.username %>
+</p>
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<p>
+<strong><%= User.human_attribute_name("email") %></strong>:
+<%= @employee.user.email %>
+</p>
+
+<p>
+<strong><%= Role.model_name.human %></strong>:
+<%= @employee.user.role.human_name %>
+</p>
+
+<%= link_to t('sigma.buttons.edit'), edit_company_employee_path(@company,@employee) %> |
+<%= link_to t('sigma.buttons.back'), company_employees_path(@company) %>

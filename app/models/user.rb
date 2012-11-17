@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :username, :login, :email, :password, :password_confirmation, :remember_me, :temporary_password
+  attr_accessible :name, :username, :login, :email, :password, :password_confirmation, :remember_me, :temporary_password, :role_id
   # Represents the login, which can be the e-mail
   # or username.
   # By default, username is the CPF of client

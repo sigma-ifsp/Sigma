@@ -5,7 +5,7 @@
 
 <p>
 <%= f.label :role_id %>
-<%= collection_select(:role, :id, @roles, :id, :name, :prompt => false) %>
+<%= f.collection_select(:role_id, @roles, :id, :human_name, :prompt => false) %>
 </p>
 
 <p>

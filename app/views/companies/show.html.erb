@@ -1,32 +1,31 @@
-<p id="notice"><%= notice %></p>
 <p>
-  <%= image_tag(@company.image.url) %>
+  <%= image_tag(@company.image.url(:medium)) %>
 </p>
 <p>
-  <b>Name:</b>
+<b><%= Company.human_attribute_name("name") %>:</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b>Cnpj:</b>
+<b><%= Company.human_attribute_name("cnpj") %>:</b>
   <%= @company.cnpj %>
 </p>
 
 <p>
-  <b>Phone:</b>
+<b><%= Company.human_attribute_name("phone") %>:</b>
   <%= @company.phone %>
 </p>
 
 <p>
-  <b>Website:</b>
+<b><%= Company.human_attribute_name("website") %>:</b>
   <%= @company.website %>
 </p>
 
 <p>
-  <b>Email:</b>
+<b><%= Company.human_attribute_name("email") %>:</b>
   <%= @company.email %>
 </p>
 
-
+<%= link_to t('companies.index.employees'), company_employees_path(@company) %> |
 <%= link_to t('sigma.buttons.edit'), edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to t('sigma.buttons.back'), companies_path %>

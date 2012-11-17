@@ -17,7 +17,9 @@ zeh:
   email: 'zeh@email.com'
   username: 'zeh'
 
+# Admin
 john:
   id: 5
   email: 'john@email.com'
   username: 'john'
+  role_id: 3

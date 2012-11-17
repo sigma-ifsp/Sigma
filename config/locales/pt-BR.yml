@@ -219,6 +219,7 @@ pt-BR:
       client: 'Cliente'
       employee: 'Funcionário'
       company: 'Empresa'
+      role: 'Papel'
     attributes:
       user:
         username: 'Login de acesso(padrão é o CPF)'
@@ -303,13 +304,25 @@ pt-BR:
      need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"
   employees:
     index:
-      title: 'Listando funcionários'
+      title: 'Lista de funcionários'
       new: 'Novo funcionário'
     new:
       title: 'Novo funcionário'
+    edit:
+      title: 'Editando funcionário'
+    errors:
+      explanation: 'Este funcionário não pode ser salvo porque:'
+    messages:
+      successfully_updated: 'O funcionário foi atualizado com sucesso'
+      successfully_created: 'O funcionário foi criado com sucesso'
   companies:
     index:
       employees: 'Funcionários'
+  roles:
+    client: 'Cliente'
+    admin: 'Administrador'
+    cashier: 'Caixa'
+    root: 'Super usuário'
   sigma:
     points: 
       title: 'Pontos'

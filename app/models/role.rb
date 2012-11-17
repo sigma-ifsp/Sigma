@@ -34,4 +34,7 @@ class Role < ActiveRecord::Base
     name == role_name
   end
 
+  def human_name
+    I18n.t("roles.#{self.name}") || self.name
+  end
 end
