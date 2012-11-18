@@ -9,7 +9,7 @@ class ClientBalanceTest < ActiveSupport::TestCase
   test "increment points" do      
     points = 5
     @balance.increment_points(points)
-    assert_equal(5,@balance.balance)
+    assert_equal(points, @balance.balance)
   end
 
   test "ready_to_exchange" do

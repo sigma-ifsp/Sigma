@@ -21,11 +21,12 @@ a {
 }
 
 .top-bar {
-  background-color: $ocean-green;
-  color: #fff;
-  a {
-    color: #fff;
-  }
+  width: 65%;
+  height: 25px;
+  float: right;
+  margin-right: 40px;
+  text-align: right;
+  color: $dutch-teal;
 }
 .centralized {
   margin: 0 20px;
@@ -45,8 +46,8 @@ h1, h2, h3, h4, h5 {
 
 ul#menu-bar {
   min-height: 50px;
-  margin: 40px;
-  float: right;
+  margin: 20px 40px;
+  float: left;
   line-height: 5px;
 
   a {
@@ -62,21 +63,17 @@ ul#menu-bar {
     border-radius: 10px;
     display: inline-block;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.20em;
     padding: 15px;
     background-image: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
     @include box-shadow(5px 5px 5px #888);
   }
 }
 
-.welcome #logo {
-  margin: 15px 40px;
-}
-
 #logo {
   width: 162px;
   height: 110px;
-  margin: 45px 40px;
+  margin: 15px 40px;
   float: left;
 }
 
@@ -144,12 +141,9 @@ ul#menu-bar {
   }
   #content {
     background: none;
+    border: none;
   }
-  #menu-bar {
-    display: none;
-  }
-
-  #logo {
+  #menu-bar, #logo, #footer {
     display: none;
   }
   .user-session-logo {
@@ -180,4 +174,5 @@ ul#menu-bar {
 .footer {
   bottom: 0;
   text-align: center;
+  clear: both;
 }

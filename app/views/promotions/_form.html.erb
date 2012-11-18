@@ -12,23 +12,23 @@
   <% end %>
 
   <div id="name" class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :image %><br />
+    <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div id="initial_date" class="field">
-    <%= f.label :initial_date %><br />
+    <%= f.label :initial_date %>
     <%= f.date_select :initial_date %>
   </div>
   <div id="ending_date" class="field">
-    <%= f.label :ending_date %><br />
+    <%= f.label :ending_date %>
     <%= f.date_select :ending_date %>
   </div>
   <div id="promotion_category" id="selecao">
@@ -36,15 +36,15 @@
 	<%=f.radio_button( :promotion_category_id, PromotionCategory.by_value.id ) %>Valor
   </div>
   <div id="points" class="field">
-    <%= f.label :points %><br />
+    <%= f.label :points %>
     <%= f.number_field :points %>
   </div>
   <div id="value" class="field hidden">
-    <%= f.label :value %><br />
+    <%= f.label :value %>
     <%= f.text_field :value %>
   </div>
   <div class="field">
-    <%= f.label :points_to_exchange %><br />
+    <%= f.label :points_to_exchange %>
     <%= f.number_field :points_to_exchange %>
   </div>
   <div class="actions">

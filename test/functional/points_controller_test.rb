@@ -5,7 +5,9 @@ class PointsControllerTest < ActionController::TestCase
     Client.delete_all
     @promotion = promotions(:two)
     @point = points(:one)
-    @point.cpf = '50422458716'
+    @point.cpf = '92065852666'
+    @point.promotion = @promotion
+    @point.save
 
     user = User.new
     user.role = Role.new(name: 'cashier')
@@ -33,7 +35,6 @@ class PointsControllerTest < ActionController::TestCase
   end
 
   test "should show point" do
-
     get :show, id: @point
     assert_response :success
   end

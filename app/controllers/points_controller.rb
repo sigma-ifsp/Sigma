@@ -19,6 +19,7 @@ class PointsController < ApplicationController
     @point = Point.find(params[:id])
 
     @temp_password = @point.client.try(:user).try(:temporary_password)
+    @balance = ClientBalance.find_by_client_id_and_promotion_id(@point.client_id, @point.promotion_id)
 
     respond_to do |format|
       format.html # show.html.erb

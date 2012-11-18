@@ -11,28 +11,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cpf, "CPF" %><br />
+    <%= f.label :cpf, "CPF" %>
     <%= f.text_field :cpf, :maxlength => 11 %>
   </div>
   
   <div class="field">
-    <%= f.label :promotion_id, "Promoção" %><br />
+    <%= f.label :promotion_id, Promotion.model_name.human %>
     <%= f.collection_select(:promotion_id, @company.promotions, :id, :name, :prompt => false) %>
   </div>
 
   <div class="field">
-    <%= f.label :value, "Valor" %><br />
+    <%= f.label :value %>
     <%= f.number_field :value %>
   </div>
   
-  <div class="field">
-    <%= label_tag :saldo , "Saldo do Cliente"%> <span id="balance"></span>
-    <%= label_tag :client_balance %><br /><span id="client_balance"></span>
-  </div>
-
   <div class="actions">
-    <%= f.submit  "Atribuir" %> 
-    <%= f.submit  "Atribuir e Trocar" %> 
-    <%= f.submit  "Trocar" %>   
+    <%= f.submit t('.assign') %> 
   </div>
 <% end %>

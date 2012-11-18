@@ -2,9 +2,14 @@ class ExchangesController < ApplicationController
 
   # POST /exchanges/create
   def create
-    @exchange = Exchange.new(params[:exchange])
+    @exchange = Point.new
+    @promotion = Promotion.find(params[:exchange_promotion_id])
+    @exchange.cpf = params[:exchange_client_cpf]
+    @exchange.promotion = @promotion
+    @exchange.points = @promotion.points_to_exchange * -1
+
     if @exchange.save
-      redirect_to '/points/new'
+      redirect_to '/points/new', :notice => t('sigma.exchanges.successful')
     else
       redirect_to '/points/new', :notice => I18n.t('sigma.exchanges.not_successful')
     end

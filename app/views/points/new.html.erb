@@ -1,5 +1,8 @@
-<h1><%= t('sigma.points.title') %></h1>
+<h2><%= t('.title') %></h2>
 
-<%= render 'form' %>
-
-<%= link_to t('sigma.buttons.back'), points_path %>
+<div id="points-new-box">
+  <%= render 'form' %>
+</div>
+<div id="client-info-box">
+  <%= render 'client_info' %>
+</div>

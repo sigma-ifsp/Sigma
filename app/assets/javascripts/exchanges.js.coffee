@@ -2,13 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-  Morris.Line
-    element: 'graphs'
-    data: $('#graphs').data('exchanges')
-    xkey: 'day'
-    ykeys: ['total']
-    labels: ['Total per day']
+  if $('#graphs').size() > 0
+    Morris.Line
+      element: 'graphs'
+      data: $('#graphs').data('exchanges')
+      xkey: 'day'
+      ykeys: ['total']
+      labels: ['Total por dia']
 
-  $("#graph_start,#graph_ending").datepicker
-    changeMonth: true
-    changeYear: true
+    $("#graph_start,#graph_ending").datepicker
+      changeMonth: true
+      changeYear: true

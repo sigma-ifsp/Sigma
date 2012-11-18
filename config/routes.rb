@@ -6,11 +6,15 @@ Sigma::Application.routes.draw do
 
   get "welcome/index"
 
+  get "client_balances/balance"
+  get "client_balances/all_balances"
+
   match 'about_us' => 'welcome#about_us'
   match 'services' => 'welcome#services'
   match 'clients/:id' => 'clients#show'
   match 'clients/:id/points' => 'clients#points'
-  match 'clients/:cpf/promotions/:promotion_id/balance' => 'clients#balance'
+  match 'clients/by_cpf/:cpf/balances' => 'client_balances#all_balances'
+  match 'clients/by_cpf/:cpf/promotions/:promotion_id/balance' => 'client_balances#balance'
 
   resources :points do
     collection do

@@ -244,6 +244,12 @@ pt-BR:
         phone: 'Telefone'
         website: 'Site'
         email: 'E-mail de responsável'
+      point:
+        value: 'Valor monetário'
+        points: 'Pontos'
+      client_balance:
+        balance: 'Saldo'
+
   devise:
     failure:
       already_authenticated: 'Você já está logado.'
@@ -323,10 +329,26 @@ pt-BR:
     admin: 'Administrador'
     cashier: 'Caixa'
     root: 'Super usuário'
+  points:
+    one: 'Ponto'
+    other: 'Pontos'
+    new:
+      title: 'Atribuir e consultar pontuação'
+    form:
+      assign: 'Atribuir pontos'
+    show:
+      title: 'Pontuação criada'
+      client_name: 'Nome do cliente'
+      new_balance: 'Novo saldo'
+      temporary_password: 'Senha temporária'
+      temporary_password_hint: 'Informe esta senha para que o cliente possa acessar pela primeira vez.'
+  promotions:
+    edit:
+      title: 'Editando promoção'
   sigma:
     points: 
-      title: 'Pontos'
-      successfully_created: 'Ponto atribuido com sucesso.'
+      title: 'Atribuir pontos'
+      successfully_created: 'Pontuação atribuida com sucesso!'
       successfully_updated: 'Ponto corrigido com sucesso.'
       new_point: 'Nova pontuação'
     points_by_promotion: 'Pontos por promoção'
@@ -348,6 +370,7 @@ pt-BR:
     ending: 'Termino'
     exchanges:
       label: 'Trocas'
+      successful: 'Troca realizada com sucesso!'
       not_sucessful: 'Troca não realizada'
       explanation: ''
     reports:
@@ -370,7 +393,10 @@ pt-BR:
       edit: 'Editar'
       destroy: 'Excluir'
       create: 'Cadastrar'
+      exchange: 'Trocar'
     edit_profile: 'Editar cadastro'
+    infos:
+      ready_to_exchange: 'Pronto para resgate. O cliente pode resgatar este produto/serviço.'
     dialogs:
       are_you_sure: "Você tem certeza?"
     please_sign_in: "Sua sessão expirou. Por favor, entre novamente"

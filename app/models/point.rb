@@ -5,7 +5,6 @@ class Point < ActiveRecord::Base
   attr_accessible :value, :cpf, :promotion_id, :company_id
   validate :check_client_cpf
 
-  # Calculate points always before save
   before_save :calculate_points
 
   # Fetches points by promotions
@@ -47,6 +46,8 @@ class Point < ActiveRecord::Base
   end
 
   def calculate_points
-    self.points = PointCalculator.new(self.value, self.promotion).points
+    unless self.points
+      self.points = PointCalculator.new(self.value, self.promotion).points
+    end
   end
 end

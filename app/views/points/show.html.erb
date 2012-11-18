@@ -1,37 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h2><%= t('.title') %></h2>
 
 <p>
-<b>Client:</b>
+<b><%= t('.client_name') %>:</b>
+<%= @point.client.try(:name) %>
+</p>
+
+<p>
+<b><%= Client.human_attribute_name('cpf') %>:</b>
 <%= @point.client %>
 </p>
 
 <% if @temp_password %>
   <p>
-  <b>Temporary password:</b>
+  <b><%= t('.temporary_password') %></b>:
   <%= @temp_password %>
+  <span class="alert alert-info">
+    <%= t('.temporary_password_hint') %>
+  </span>
   </p>
 <% end %>
 
 <p>
-  <b>Value:</b>
-  <%= @point.value %>
+<b><%= t('points.other') %>:</b>
+<%= @point.points %>
 </p>
 
 <p>
-  <b>Points:</b>
-  <%= @point.points %>
+  <b><%= t('.new_balance') %></b>:
+  <%= @balance.balance %> / <%= @point.promotion.points_to_exchange %>
 </p>
 
 <p>
-  <b>Promotion:</b>
-  <%= @point.promotion %>
+<b><%= Promotion.model_name.human %></b>:
+<%= @point.promotion %>
 </p>
-
-<p>
-  <b>Company:</b>
-  <%= @point.company %>
-</p>
-
-
-<%= link_to t('sigma.buttons.edit'), edit_point_path(@point) %> |
-<%= link_to 'Back', points_path %>
+<%= link_to t('sigma.buttons.back'), new_point_path, class: 'btn' %>
