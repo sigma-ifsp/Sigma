@@ -126,13 +126,21 @@ ul#menu-bar {
 }
 
 .form-signin.container {
-  h2 {
+  h2.signin {
     width: 120px;
     float: left;
   }
+  #error_explanation {
+    width: 280px;
+  }
 }
 
-.devise-sessions-new {
+.devise-sessions-new,
+.devise-sessions-create,
+.devise-registrations-new,
+.devise-registrations-create,
+.devise-passwords-new,
+.devise-passwords-create {
   .small-box {
     background: white;
   }

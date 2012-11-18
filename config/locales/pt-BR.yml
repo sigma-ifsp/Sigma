@@ -305,6 +305,9 @@ pt-BR:
       cancel_my_account: 'Cancelar minha conta'
     sign_up: 'Novo cadastro'
     sign_in: 'Acessar'
+    forget_password: 'Esqueci minha senha'
+    forgot_password: 'Esqueceu sua senha?'
+    forget_password_button: 'Me envie instruções para cadastrar nova senha'
     hints:
      leave_blank_password: "deixe em branco se você não quiser mudar"
      need_to_inform_password: "precisamos da sua senha atual para salvar suas mudanças"

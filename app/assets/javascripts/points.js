@@ -16,7 +16,7 @@ $(document).ready(function () {
     }
   };
 
-  $("#point_cpf").keydown(function(event) {
+  $("#point_cpf, .form-signin #user_username").keydown(function(event) {
     // Prevents the default behavior unless key is number(48 <= 57 && 96 <= 105)
     // or enter / backspace / esc / tab
     if ( ! ( (event.which == 8 || event.which == 9 || event.which == 46 || event.which == 27) || 

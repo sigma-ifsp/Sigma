@@ -12,14 +12,19 @@ class User < ActiveRecord::Base
   # By default, username is the CPF of client
   attr_accessor :login
 
-  # Associations
   belongs_to :role
   has_one :client
   has_one :employee
 
   before_save :erase_temporary_password!
+  after_create :create_new_client
 
   delegate :root?, :cashier?, :admin?, :client?, to: :role, allow_nil: true
+
+  # Validates CPF using Brazilian Rails
+  # Only validates username if user is new and don't have role yet
+  validates :username, :presence => true, :cpf => true, :uniqueness => true,
+    :if => Proc.new{|user| user.role_id.nil? && user.new_record? }
 
   # Find by login
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -32,6 +37,16 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def create_new_client
+    unless self.role
+      new_client = Client.new
+      new_client.cpf = self.username
+      self.client = new_client
+      self.role = Role.client
+      self.save
+    end
+  end
 
   def erase_temporary_password!
     if self.sign_in_count > 0

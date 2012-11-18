@@ -10,7 +10,8 @@ pre {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #F2DEDE;
+  color: #B94A48;
   display: table;
 }
 
@@ -20,7 +21,6 @@ pre {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -28,8 +28,9 @@ pre {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
+    background-color: #F2DEDE;
+    color: #B94A48;
+    text-shadow: none;
   }
   ul li {
     font-size: 12px;
