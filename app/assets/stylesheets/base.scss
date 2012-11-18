@@ -9,7 +9,7 @@ $ocean-green: #127886;
 }
 
 body {
-  background-image: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
+  background-image: url('/assets/retina_wood.png');
 }
 
 a {
@@ -25,6 +25,7 @@ a {
   height: 25px;
   float: right;
   margin-right: 40px;
+  padding: 5px;
   text-align: right;
   color: $dutch-teal;
 }
@@ -33,7 +34,9 @@ a {
 }
 #content {
   width: 80%;
+  margin: 10px auto;
 }
+
 .row-fluid {
   margin: 0 auto;
   padding: 10px;
@@ -65,8 +68,7 @@ ul#menu-bar {
     text-align: center;
     font-size: 1.20em;
     padding: 15px;
-    background-image: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png');
-    @include box-shadow(5px 5px 5px #888);
+    @include box-shadow(3px 3px 3px 3px #eee);
   }
 }
 
@@ -75,6 +77,9 @@ ul#menu-bar {
   height: 110px;
   margin: 15px 40px;
   float: left;
+  img {
+    margin: 0 auto;
+  }
 }
 
 #content-box {
@@ -100,11 +105,11 @@ ul#menu-bar {
 #content, .form-signin, .small-box {
   background-color: #fff;
   border-radius: 10px;
-  margin: 0 auto;
   border: 1px solid #e5e5e5;
 }
 
 .form-signin, .small-box {
+  margin: 0 auto;
   padding: 19px 29px 29px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -183,4 +188,48 @@ ul#menu-bar {
   bottom: 0;
   text-align: center;
   clear: both;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  #content, #logo {
+    width: 100%;
+  }
+  #logo {
+    text-align: center;
+    margin: 15px auto;
+  }
+  .top-bar {
+    width: 100%;
+    height: auto;
+    clear: both;
+  }
+  .form-signin {
+    width: 100%;
+    max-width: 100%;
+  }
+  .container-fluid {
+    padding: 0 5px;
+  }
+
+  ul#menu-bar {
+    margin: 20px 5px;
+    width: 100%;
+  }
+  #content-box {
+    margin:0 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  ul#menu-bar {
+    margin: 15px auto;
+    li {
+      margin: 5px;
+      width: 95%;
+      padding: 15px 0;
+      clear: both;
+    }
+  }
 }

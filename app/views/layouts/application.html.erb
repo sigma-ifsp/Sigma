@@ -9,8 +9,7 @@
   </head>
   <body class="<%= current_page_class %> <%= params[:controller] %>">
     <div class="container-fluid">
-      <div id="content" class="row-fluid centralized">
-        <h1 id="logo"><a href="/"><%= image_tag '/assets/logo.jpg', :alt => 'Sigma Fidelidade' %></a></h1>
+      <div id="content" class="centralized">
         <div class="top-bar">
           <% if user_signed_in? %>
             <%= t('devise.sessions.signed_as') %> <strong><%= current_user.username || current_user.email %></strong>.
@@ -18,12 +17,17 @@
             <%= link_to t('devise.buttons.logout'), destroy_user_session_path, method: :delete %>
           <% end %>
         </div>
+
+        <h1 id="logo"><a href="/"><%= image_tag '/assets/logo.jpg', :alt => 'Sigma Fidelidade' %></a></h1>
+
         <%= menu_for_user(current_user || User.new) %>
+
         <div id="content-box" class="centralized">
           <%= content_tag(:p, notice, :class => 'alert alert-success notice') if notice.present? %>
           <%= content_tag(:p, alert , :class => 'alert alert-warn') if alert.present? %>
           <%= yield %>
         </div>
+
         <div class="footer">
           <address>
             <%= t('sigma.footer.address') %>
