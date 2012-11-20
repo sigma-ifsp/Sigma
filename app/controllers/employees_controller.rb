@@ -49,6 +49,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(params[:employee])
     @employee.company = @company
+    @roles = Role.where(name: ['cashier','admin'])
 
     respond_to do |format|
       if @employee.save
