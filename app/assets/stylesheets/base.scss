@@ -32,8 +32,10 @@ a {
 .centralized {
   margin: 0 20px;
 }
+
 #content {
-  width: 80%;
+  position: relative;
+  width: 980px;
   margin: 10px auto;
 }
 
@@ -49,7 +51,7 @@ h1, h2, h3, h4, h5 {
 
 ul#menu-bar {
   min-height: 50px;
-  margin: 20px 40px;
+  margin: 10px 40px;
   float: left;
   line-height: 5px;
 
@@ -67,7 +69,7 @@ ul#menu-bar {
     display: inline-block;
     text-align: center;
     font-size: 1.20em;
-    padding: 15px;
+    padding: 10px;
     @include box-shadow(3px 3px 3px 3px #eee);
   }
 }
@@ -191,7 +193,11 @@ ul#menu-bar {
 }
 
 /* Responsive styles */
-
+@media (max-width: 940px) {
+  #content {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   #content, #logo {
     width: 100%;

@@ -1,0 +1,5 @@
+<%= form_tag('/exchanges') do %>
+  <%= hidden_field_tag :exchange_client_cpf %>
+  <%= hidden_field_tag :exchange_promotion_id %>
+  <%= submit_tag(t('sigma.buttons.exchange'),:class => 'btn btn-primary', :id => 'exchange-button', data: { confirm: t('sigma.dialogs.are_you_sure') }) %>
+<% end %>
