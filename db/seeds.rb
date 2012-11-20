@@ -60,6 +60,7 @@ end
   })
   p.company = company
   p.promotion_category = PromotionCategory.last
+  p.user_id = admin_user.id
   p.save
 end
 
@@ -73,6 +74,7 @@ end
   })
   p.company = company
   p.promotion_category = PromotionCategory.first
+  p.user_id = admin_user.id
   p.save
 end
 
@@ -83,16 +85,8 @@ end
     p.cpf = client.cpf
     p.company = company
     p.promotion = Promotion.first(:offset => rand(Promotion.count))
-    p.value = 50.0
+    p.value = (rand * 200).round(2)
     p.created_at = date.to_time
     p.save
   end
-end
-
-1.upto(20) do |x|
-  e = Exchange.new
-  e.promotion_id = rand(10)+1
-  e.client_id = 3
-  e.created_at = (rand(5)+1).days.ago
-  e.save
 end

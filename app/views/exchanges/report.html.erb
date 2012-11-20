@@ -18,7 +18,7 @@
     <% @exchanges.each do |exchange| %>
       <tr>
         <td> <%= l(exchange.day.to_date) %> </td>
-        <td> <%= exchange.total %> </td>
+        <td> <%= exchange.clients_count %> </td>
       </tr>
     <% end %>
   </tbody>

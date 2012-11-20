@@ -98,7 +98,7 @@ class PointsController < ApplicationController
 
     @promotion = Promotion.find(params[:graph][:promotion_id])
     @company = @promotion.company
-    @points_report = Point.by_promotion(@promotion).
+    @points_report = Point.credits.by_promotion(@promotion).
       total_daily(@start,@ending)
 
     respond_to do |format|

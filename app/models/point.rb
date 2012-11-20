@@ -17,6 +17,8 @@ class Point < ActiveRecord::Base
   scope :by_valid_promotions,
     lambda {  { :include => :promotion, :conditions => ['promotions.ending_date >= ?', Date.today] } }
 
+  scope :exchanges, where('points.points < 0')
+  scope :credits, where('points.points > 0')
   # Represents the client document
   attr_reader :cpf
 

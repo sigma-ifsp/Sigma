@@ -34,7 +34,7 @@ class ExchangesController < ApplicationController
 
     @promotion = Promotion.find(params[:graph][:promotion_id])
     @company = @promotion.company
-    @exchanges = Exchange.by_promotion(@promotion).
+    @exchanges = Point.exchanges.by_promotion(@promotion).
       total_daily(@start, @ending) rescue []
 
     respond_to do |format|

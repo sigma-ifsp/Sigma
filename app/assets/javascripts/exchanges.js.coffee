@@ -7,7 +7,7 @@ jQuery ->
       element: 'graphs'
       data: $('#graphs').data('exchanges')
       xkey: 'day'
-      ykeys: ['total']
+      ykeys: ['clients_count']
       labels: ['Total por dia']
 
     $("#graph_start,#graph_ending").datepicker

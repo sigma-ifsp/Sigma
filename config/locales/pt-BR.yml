@@ -345,6 +345,9 @@ pt-BR:
       new_balance: 'Novo saldo'
       temporary_password: 'Senha temporária'
       temporary_password_hint: 'Informe esta senha para que o cliente possa acessar pela primeira vez.'
+    report:
+      total_of_points: 'Total de pontos'
+      total_of_clients: 'Total de clientes'
   promotions:
     edit:
       title: 'Editando promoção'
