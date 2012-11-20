@@ -17,7 +17,7 @@
     <td><%= employee.user.role.human_name %></td>
     <td><%= employee.user.username %></td>
     <td><%= employee.user.email %></td>
-    <td><%= link_to t('sigma.buttons.show'), employee, class: 'btn btn-primary' %></td>
+    <td><%= link_to t('sigma.buttons.show'), [employee.company, employee], class: 'btn btn-primary' %></td>
     <td><%= link_to t('sigma.buttons.edit'), edit_company_employee_path(employee.company, employee), class: 'btn' %></td>
     <td><%= link_to t('sigma.buttons.destroy'), [@company,employee], method: :delete, data: { confirm: t('sigma.dialogs.are_you_sure') }, class: 'btn btn-danger' %></td>
   </tr>
