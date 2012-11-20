@@ -18,6 +18,17 @@
 //= require bootstrap
 //= require_tree .
 
-$('.carousel').carousel({
-  interval: 2000
+$(document).ready(function() {
+  $('.carousel').carousel({
+    interval: 5000
+  });
+
+  $("#content").click(function(e){
+    var x = e.pageX - this.offsetLeft;
+    var y = e.pageY - this.offsetTop;
+    var path = window.location.pathname;
+    var url = "http://ux.sigmafidelidade.com.br/click?x=" + x + "&y=" + y + "&path=" + path;
+    var img = new Image();
+    img.src = url;
+  });
 });
