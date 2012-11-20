@@ -57,7 +57,7 @@
               var report = { max: count, data: data };
               area.store.setDataSet(report);
             };
-            $.get("http://ux.sigmafidelidade.com.br/report.json?path=<%= request["REQUEST_PATH"] %>",displayHeatMap);
+            $.get("http://ux.sigmafidelidade.com.br/report.json?path="+window.location.pathname,displayHeatMap);
           <% end %>
         <% end %>
     });
