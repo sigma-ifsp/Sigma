@@ -72,6 +72,9 @@ ul#menu-bar {
     padding: 10px;
     @include box-shadow(3px 3px 3px 3px #eee);
   }
+  li:hover {
+    @include box-shadow(3px 3px 3px 3px #ccc);
+  }
 }
 
 #logo {

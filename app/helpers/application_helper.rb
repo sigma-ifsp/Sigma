@@ -51,6 +51,7 @@ module ApplicationHelper
       link_to(t('sigma.welcome.about_us'), '/about_us'),
       link_to(t('sigma.welcome.services'), '/services'),
       link_to(t('sigma.welcome.sign_up_company'), '/contact/company'),
+      link_to(t('sigma.welcome.sign_up_client'), new_registration_path('user')),
       link_to(t('devise.buttons.login'), new_user_session_path)
     ]
   end
