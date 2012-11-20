@@ -35,5 +35,32 @@
         </div>
       </div>
     </div>
+  <script src="http://ux.sigmafidelidade.com.br/heatmap.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+
+        var trackClick = function(e){
+          var x = e.pageX - this.offsetLeft;
+          var y = e.pageY - this.offsetTop;
+          var path = window.location.pathname;
+          var url = "http://ux.sigmafidelidade.com.br/click?x=" + x + "&y=" + y + "&path=" + path;
+          var img = new Image();
+          img.src = url;
+          };
+
+        <% if Rails.env.production? %>
+          $("#content").click(trackClick);
+          <% if params[:ux_padawan] %>
+            var area = h337.create({"element":document.getElementById("content"), "radius":25, "visible":true});
+            var displayHeatMap = function(data){
+              var count = (data[0] ? (data[0]['count'] + 2) : 1);
+              var report = { max: count, data: data };
+              area.store.setDataSet(report);
+            };
+            $.get("http://ux.sigmafidelidade.com.br/report.json?path=<%= request["REQUEST_PATH"] %>",displayHeatMap);
+          <% end %>
+        <% end %>
+    });
+  </script>
   </body>
 </html>
