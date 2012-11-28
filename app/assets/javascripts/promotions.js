@@ -1,10 +1,12 @@
 
 var checkDatesInterval = function(initial_year, initial_month, initial_day, ending_year, ending_month, ending_day ){
   if ( ( initial_year > ending_year ) || (initial_year >= ending_year && initial_month > ending_month ) ) {
+    alert('Data inicial deve ser inferior a data final');
     return false;
   }
 
   if ( initial_year == ending_year && initial_month == ending_month && ( initial_day >= ending_day ) ) {
+    alert('Data inicial não pode ser igual ou superior a data final');
     return false;
   }
 
@@ -14,7 +16,9 @@ var checkDatesInterval = function(initial_year, initial_month, initial_day, endi
 
 $(document).ready(function(){
   var verifyPointsValueChoice = function() {
-    if ( this.value == 0 ){
+    // Promotion by points: 1
+    // Promotion by value : 2
+    if ( $(this).val() == 1 ){
       $("#value").hide();
       $("#points").show();
     } else {
@@ -38,6 +42,6 @@ $(document).ready(function(){
     }
   };
 
-  $("#promotion_category > input").click(verifyPointsValueChoice);
+  $("#promotion_category input").click(verifyPointsValueChoice);
   $(".actions > input[type=submit]").click(verifyPromotionDates);
 });
