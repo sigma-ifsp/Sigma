@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body class="<%= current_page_class %> <%= params[:controller] %>">
+  <body class="<%= current_page_class %> <%= current_controller_class %>">
     <div class="container-fluid">
       <div id="content" class="centralized">
         <div class="top-bar">
@@ -32,6 +32,10 @@
           <address>
             <%= t('sigma.footer.address') %>
           </address>
+          <p>
+          © 2012 - Equipe Sigma
+          </p>
+
         </div>
       </div>
     </div>
