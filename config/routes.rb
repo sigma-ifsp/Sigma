@@ -1,5 +1,6 @@
 Sigma::Application.routes.draw do
   get "contact/company"
+  post "contact/send_to_sigma"
 
   get "contact/client"
   resources :employees
@@ -12,7 +13,7 @@ Sigma::Application.routes.draw do
   match 'about_us' => 'welcome#about_us'
   match 'services' => 'welcome#services'
   match 'clients/:id' => 'clients#show'
-  match 'clients/:id/points' => 'clients#points'
+  match 'clients/:id/points' => 'clients#points', as: 'client_points'
   match 'clients/by_cpf/:cpf/balances' => 'client_balances#all_balances'
   match 'clients/by_cpf/:cpf/promotions/:promotion_id/balance' => 'client_balances#balance'
 
