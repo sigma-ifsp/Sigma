@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <p>
   <%= image_tag(@company.image.url) %>
 </p>
@@ -27,6 +26,6 @@
   <%= @company.email %>
 </p>
 
-<%= link_to t('companies.index.employees'), company_employees_path(@company) %> |
-<%= link_to t('sigma.buttons.edit'), edit_company_path(@company) %> |
-<%= link_to t('sigma.buttons.back'), companies_path %>
+<%= link_to t('companies.index.employees'), company_employees_path(@company), class: 'btn' %> |
+<%= link_to t('sigma.buttons.edit'), edit_company_path(@company), class: 'btn' %> |
+<%= link_to t('sigma.buttons.back'), companies_path, class: 'btn' %>
