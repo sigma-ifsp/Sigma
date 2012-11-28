@@ -351,6 +351,10 @@ pt-BR:
   promotions:
     edit:
       title: 'Editando promoção'
+    form:
+      points: 'Pontos'
+      value: 'Valor'
+    points_to_exchange: 'Pontos para troca são os pontos necessários que cada cliente precisa atingir para que possa trocar seus pontos.'
   sigma:
     points: 
       title: 'Atribuir pontos'
@@ -415,5 +419,5 @@ pt-BR:
       sign_up_client: 'Cadastre-se'
       retain_customers: 'Fidelize clientes'
       main_quote:
-        text: 'Fidelizar clientes, é criar um elo entre confiança e segurança.'
+        text: 'Fidelizar clientes é criar um elo entre confiança e segurança.'
         author: 'Equipe Sigma'
