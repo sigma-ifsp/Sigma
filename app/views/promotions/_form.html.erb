@@ -1,8 +1,7 @@
 <%= form_for(@promotion) do |f| %>
   <% if @promotion.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
-
+      <h2><%= t('errors.messages.not_saved', :count => @promotion.errors.count, :resource => @promotion.class.model_name.human) %></h2>
       <ul>
       <% @promotion.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -29,12 +28,26 @@
   </div>
   <div id="ending_date" class="field">
     <%= f.label :ending_date %>
-    <%= f.date_select :ending_date %>
+    <%= f.date_select :ending_date, :default => 60.days.from_now %>
   </div>
+
   <div id="promotion_category" id="selecao">
-  <%=f.radio_button( :promotion_category_id, PromotionCategory.by_points.id, :checked => true ) %> Pontos
-	<%=f.radio_button( :promotion_category_id, PromotionCategory.by_value.id ) %>Valor
+    <div class="alert alert-info">
+      <strong>Promoção por pontos:</strong> A cada nova compra, o cliente ganhará determinada quantidade
+      de pontos, independente do valor da compra. <br />
+      <strong>Promoção por valor:</strong> A cada nova compra, a pontuação será calculada com base no
+      total gasto pelo cliente. Este é o modelo mais indicado.
+    </div>
+    <label>
+      <%= f.radio_button(:promotion_category_id, PromotionCategory.by_points.id, :checked => true) %>
+      <%= t('promotions.form.points') %>
+    </label>
+    <label>
+      <%= f.radio_button(:promotion_category_id, PromotionCategory.by_value.id) %>
+      <%= t('promotions.form.value') %>
+    </label>
   </div>
+
   <div id="points" class="field">
     <%= f.label :points %>
     <%= f.number_field :points %>
@@ -44,6 +57,9 @@
     <%= f.text_field :value %>
   </div>
   <div class="field">
+    <div class="alert alert-info">
+      <%= t('promotions.points_to_exchange') %>
+    </div>
     <%= f.label :points_to_exchange %>
     <%= f.number_field :points_to_exchange %>
   </div>
