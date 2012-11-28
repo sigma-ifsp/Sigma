@@ -194,6 +194,19 @@ ul#menu-bar {
   text-align: center;
   clear: both;
 }
+.foods {
+  .span4 {
+    width: 285px;
+  }
+}
+
+#company-contact {
+  width: 400px;
+  float: left;
+  textarea {
+    height: 200px;
+  }
+}
 
 /* Responsive styles */
 @media (max-width: 940px) {
