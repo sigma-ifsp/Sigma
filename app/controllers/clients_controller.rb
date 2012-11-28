@@ -1,9 +1,8 @@
 class ClientsController < ApplicationController
   
-  def index
-  end
-
+  # GET /clients/:id
   def show
+    redirect_to client_points_path(params[:id])
   end
 
   # GET /clients/:id/points

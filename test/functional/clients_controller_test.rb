@@ -12,7 +12,7 @@ class ClientsControllerTest < ActionController::TestCase
 
   test "should get show" do
     get :show, :id => @client.id
-    assert_response :success
+    assert_redirected_to(client_points_path(@client.id))
   end
 
   test "should get points" do

@@ -57,6 +57,10 @@ module ApplicationHelper
   end
 
   def current_page_class
-    "#{params[:controller].gsub("/","-")}-#{params[:action]}"
+    "#{current_controller_class}-#{params[:action]}"
+  end
+
+  def current_controller_class
+    params[:controller].gsub("/","-")
   end
 end
