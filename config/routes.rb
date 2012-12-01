@@ -19,7 +19,7 @@ Sigma::Application.routes.draw do
 
   resources :points do
     collection do
-      post '/report'
+      get '/report'
     end
   end
 
@@ -33,7 +33,7 @@ Sigma::Application.routes.draw do
 
   resources :exchanges do
     collection do
-      post '/report'
+      get '/report'
     end
   end
 

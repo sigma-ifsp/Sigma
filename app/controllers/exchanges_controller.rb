@@ -24,7 +24,7 @@ class ExchangesController < ApplicationController
     end
   end
 
-  # POST /exchanges/report
+  # GET /exchanges/report
   def report
     begin
       @start, @ending = params[:graph_start].to_date, params[:graph_ending].to_date
@@ -34,7 +34,7 @@ class ExchangesController < ApplicationController
 
     @promotion = Promotion.find(params[:graph][:promotion_id])
     @company = @promotion.company
-    @exchanges = Point.exchanges.by_promotion(@promotion).
+    @exchanges = Point.exchanges.by_promotions(@promotion).
       total_daily(@start, @ending) rescue []
 
     respond_to do |format|

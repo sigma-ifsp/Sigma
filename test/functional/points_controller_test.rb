@@ -56,4 +56,9 @@ class PointsControllerTest < ActionController::TestCase
 
     assert_redirected_to points_path
   end
+
+  test "should get report" do
+    get :report, graph: { promotion_id: 1}, graph_start: "28/11/2011", graph_ending: "29/11/2012"
+    assert_response :success
+  end
 end

@@ -5,6 +5,7 @@ class Point < ActiveRecord::Base
   attr_accessible :value, :cpf, :promotion_id, :company_id
   validate :check_client_cpf
 
+  # Callback to calculate points
   before_save :calculate_points
 
   # Fetches points by promotions
@@ -12,13 +13,14 @@ class Point < ActiveRecord::Base
     :include => :promotion, :conditions => { :promotion_id => promotions }
   }}
 
-  scope :by_promotion, lambda{|promotion| where(promotion_id: promotion) }
-
   scope :by_valid_promotions,
     lambda {  { :include => :promotion, :conditions => ['promotions.ending_date >= ?', Date.today] } }
 
+  # Exchanges are negative points
   scope :exchanges, where('points.points < 0')
+
   scope :credits, where('points.points > 0')
+
   # Represents the client document
   attr_reader :cpf
 

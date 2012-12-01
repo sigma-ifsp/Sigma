@@ -355,6 +355,10 @@ pt-BR:
       points: 'Pontos'
       value: 'Valor'
     points_to_exchange: 'Pontos para troca são os pontos necessários que cada cliente precisa atingir para que possa trocar seus pontos.'
+  clients:
+    points:
+      without_points: "Você ainda não possui pontos acumulados."
+      info: "Seus pontos acumulados e promoções que participa."
   sigma:
     points: 
       title: 'Atribuir pontos'

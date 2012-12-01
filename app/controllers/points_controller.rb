@@ -89,6 +89,7 @@ class PointsController < ApplicationController
     end
   end
 
+  # GET /points/report
   def report
     begin
       @start, @ending = params[:graph_start].to_date, params[:graph_ending].to_date
@@ -98,7 +99,7 @@ class PointsController < ApplicationController
 
     @promotion = Promotion.find(params[:graph][:promotion_id])
     @company = @promotion.company
-    @points_report = Point.credits.by_promotion(@promotion).
+    @points_report = Point.credits.by_promotions(@promotion).
       total_daily(@start,@ending)
 
     respond_to do |format|

@@ -19,7 +19,7 @@ module ApplicationHelper
   def menu_for_client(client)
     [
       link_to(I18n.t('points.other'), {:controller => '/clients', :id => client.id, :action => 'points'}),
-      link_to(I18n.t('sigma.profile'), edit_user_registration_path(client.user_id))
+      link_to(I18n.t('sigma.profile'), edit_user_registration_path(client.user))
     ]
   end
 

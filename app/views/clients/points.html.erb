@@ -1,16 +1,16 @@
 <h2><%= I18n.t('sigma.points_by_promotion') %></h2>
 <p>
-<%= content_tag(:div, "Seus pontos acumulados e promoções que participa.",:class => 'alert alert-info') %>
+<%= content_tag(:div, t('.info'),:class => 'alert alert-info') %>
 </p>
 <p>
-<%= content_tag(:div, "Você ainda não possui pontos acumulados.", class: 'alert alert-info') if @points.empty? %>
+<%= content_tag(:div, t('.without_points'), class: 'alert alert-info') if @points.empty? %>
 </p>
-<% @points.group_by(&:company).each do |company, company_points| %>
-    <p style="text-align: left;">
-      <%= image_tag(company.image.url(:thumb), class: 'company-points-image') %>
-      <h3 style="padding-left: 130px;"><%= company.name %></h3>
-    </p>
-    <div class="company-points-box">
+<% @points.group_by{|x| x.promotion.company }.each do |company, company_points| %>
+  <p style="text-align: left;">
+  <%= image_tag(company.image.url(:thumb), class: 'company-points-image') %>
+  <h3 style="padding-left: 130px;"><%= company.name %></h3>
+  </p>
+  <div class="company-points-box">
     <% company_points.group_by(&:promotion).each do |promotion, points| %>
       <h4><%= image_tag(promotion.image.url(:list)) %> <%=  promotion.name %></h4>
       <p><%= promotion.description %></p>
@@ -21,6 +21,6 @@
         </div>
       </div>
     <% end %>
-    </div>
+  </div>
   <hr class="bs-docs-separator"/>
 <% end %>

@@ -1,4 +1,4 @@
-<%= form_tag(form_path) do %>
+<%= form_tag(form_path, method: :get) do %>
   <div class="field">
     <%= label(:graph,:promotion_id, t('sigma.promotion')) %>
     <%= collection_select(:graph, :promotion_id, @company.promotions, :id, :name, :prompt => false) %>
