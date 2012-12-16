@@ -277,7 +277,80 @@ rake doc:app
 Será criado no diretório `doc/` um website estático contendo
 a documentação(gerado com RDoc).
 
+## Versionamento
 
-## Arquitetura
+Para versionamento, foi utilizado o [Git](http://git-scm.com/), e a hospedagem foi feita
+através do [Github](https://github.com/).
+A equipe decidiu utilizar o Git por já conhecer o software e por ele possibilitar
+maior flexibilidade quando usado em conjunto com Ruby e Rails.
 
+O modelo de desenvolvimento utilizado foi o "feature-branch", onde cada nova
+funcionalidade é isolada em um *branch*, que é uma ramificação do software.
 
+Exemplo:
+
+Temos a funcionalidade de autenticação, então criamos um branch com nome "authentication":
+```
+$ git checkout -b authentication
+```
+
+Todo o trabalho é feito neste *branch*, e então ele será unido ao *master*:
+```
+$ git checkout master
+$ git merge authentication
+```
+
+O conceito de branch é muito similar ao do Subversion. É possível manter versões
+de desenvolvimento em diferentes *branchs*, e então depois uni-los com o *branch*
+principal. No caso do git, o *branch* principal é denominado *master*(no Subversion ele é o trunk).
+
+O fato do Git ser descentralizado possibilita a criação de *branchs* locais, sem precisar
+disponibilizá-los no repositório "central".
+
+Alguns conceitos acabaram não sendo utilizados, como as *tags*
+que marcam versões nomeadas(por exemplo, 0.1).
+
+### Sincronização com Subversion
+
+A utilização de repositórios externos foi autorizada pelos professores,
+desde que fosse sincronizado com o Subversion instalado nos servidores do IFSP.
+
+O Git possui uma ferramenta que possibilita essa sincronização. A ferramenta denominada
+"Git-SVN" torna possível a utilização de repositórios git em conjunto com repositórios SVN.
+
+Para que seja sincronizado, deverá ser utilizado os seguintes passos:
+
+Fazer uma nova cópia do projeto completo no diretório Sigma:
+```
+$ git-svn clone https://fw.lab.sp.cefetsp.br/svn/a6pgp/S201202/Sigma/ --username prontuário 
+
+```
+
+Criar um branch para desenvolvimento:
+```
+$ git checkout -b novo_branch
+```
+
+Depois de desenvolver a nova funcionalidade, deve-se atualizar o repositório Subversion.
+Um detalhe ruim é que o repositório Subversion armazenará os commits com o nome do
+autor que fizer a sincronização.
+Para sincronizar, faça o *merge* com o master e atualize o repositório:
+```
+$ git checkout master # Vai para o master
+$ git merge novo_branch
+$ git-svn dcommit
+$ git-svn rebase
+```
+
+Para manter uma outra cópia do projeto em algum repositório git remoto, adicione
+uma referência no git:
+
+```
+$ git remote add origin git@github.com:sigma-ifsp/Sigma.git
+```
+
+Quando os desenvolvedores clonarem o projeto a partir do repositório Git, as
+referências do repositório remoto já estarão definidas.
+```
+$ git clone git@github.com:sigma-ifsp/Sigma.git
+```
