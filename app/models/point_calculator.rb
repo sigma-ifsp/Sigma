@@ -7,6 +7,9 @@ class PointCalculator
   # The promotions associated with the point
   attr_reader :promotion
 
+  # Receives:
+  # value: +Integer+
+  # promotion: +Promotion+
   def initialize(value, promotion)
     @value = value
     @promotion = promotion
@@ -23,6 +26,8 @@ class PointCalculator
 
   private
 
+  # Calculates the amount of points
+  # if the promotion is by "value"
   def points_by_value
     value / promotion.value 
   end

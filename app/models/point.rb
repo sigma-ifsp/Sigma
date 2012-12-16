@@ -1,3 +1,8 @@
+# Represents one "transation".
+# When the +Client+ buy something of +Company+,
+# some amount of points is created.
+# After create, the +ClientBalance+ it updated,
+# through the +PointObserver+
 class Point < ActiveRecord::Base
   belongs_to :client
   belongs_to :promotion
@@ -24,7 +29,8 @@ class Point < ActiveRecord::Base
   # Represents the client document
   attr_reader :cpf
 
-  # Find or create a new client based on CPF
+  # Find or create a new client based on CPF,
+  # then assign it to this point
   def cpf=(client_cpf)
     @cpf = client_cpf
     client = Client.find_or_create_by_cpf(client_cpf)
@@ -43,12 +49,14 @@ class Point < ActiveRecord::Base
 
   private
 
+  # Use the Brazilian Rails to check CPF
   def check_client_cpf
     if not Cpf.new(@cpf).valido?
       errors.add :cpf, I18n.t('errors.messages.cpf_is_not_valid')
     end
   end
 
+  # Calls +PointCalculator+ to solve the amount of points
   def calculate_points
     unless self.points
       self.points = PointCalculator.new(self.value, self.promotion).points

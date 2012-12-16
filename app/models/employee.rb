@@ -1,3 +1,8 @@
+# A +Company+ employee
+#
+# It can have two user roles:
+#   - Admin: can create promotions and see the reports;
+#   - Cashier: can create points and see client balances.
 class Employee < ActiveRecord::Base
   belongs_to :company
   belongs_to :user

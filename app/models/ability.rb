@@ -1,10 +1,17 @@
+# Defines +User+ abilities.
+# It uses +CanCan::Ability+.
+# Check the +Role+ model for more details about roles.
 class Ability
   include CanCan::Ability
 
+  # Receives an +User+
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
+
+    # By default, root can do anything
+    # But in reality, it just manage Companies
     if user.root?
       can :manage, :all
     end

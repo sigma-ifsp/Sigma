@@ -1,3 +1,15 @@
+# The +Company+ +Promotion+
+# It could be by value or by points
+# "By points" promotions is the type of promotion
+# that gives points based on some "constant" points.
+# The opposite is "by value" promotions
+# which is the promotion that gives points based
+# on the poins by value.
+#
+# Example:
+#   I have a Promotion that is by value.
+#   For $10, it gives me 1 point.
+#   I buy $100 and this promotion gives me 100 points.
 class Promotion < ActiveRecord::Base
   belongs_to :company
   belongs_to :user
@@ -15,6 +27,7 @@ class Promotion < ActiveRecord::Base
   # Set default point value
   before_save :set_default_point_value
   
+  # The +String+ representation of points
   def to_s
     self.name
   end
