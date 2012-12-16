@@ -147,6 +147,8 @@ $ wget -c http://nginx.org/download/nginx-1.0.5.tar.gz
 $ tar xfz nginx-1.0.5.tar.gz 
 $ cd nginx-1.0.5
 $ ./configure --prefix=/opt/nginx --user=nginx --group=nginx --with-http_ssl_module
+$ make
+# make install
 # /usr/sbin/useradd -M -r --shell /sbin/nologin --home-dir /opt/nginx nginx # Cria usuário para servidor
 # wget -O init-rpm.sh http://library.linode.com/assets/662-init-rpm.sh # Script de inicialização
 # mv init-rpm.sh /etc/rc.d/init.d/nginx
